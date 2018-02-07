@@ -198,6 +198,14 @@ SO MUCH WORK
 
 ---
 
+# Iteration #1
+
+Coding Arduino
+
+setup + loop
+
+---
+
 # First Outing: Lighted Bike Ride Amsterdam
 
 ![inline loop](bike-ride.mp4)
