@@ -7,7 +7,7 @@ footer: @stephaniecodes
 
 ### Stephanie Nemeth
 
-#### <br>[@stephaniecodes](https://twitter.com/stephaniecodes)
+#### @stephaniecodes
 
 [.hide-footer]
 
@@ -64,7 +64,7 @@ footer: @stephaniecodes
 
 # My first project
 
-![inline](react-native-demo.mp4)
+![inline loop](react-native-demo.mp4)
 
 ---
 
@@ -82,27 +82,30 @@ footer: @stephaniecodes
 
 📹 [https://goo.gl/mK5afh](https://www.youtube.com/watch?v=eud6LnzVISM)
 
----
-
-## Next project
-
-# <br><br>
-
-### Clothing as a canvas
-
 ^Inspired by the reaction to my pixel art project
 ^Take the experience out of my living room
+
+---
+
+## What if
+
+## I made my clothing
+
+## the canvas?
+
 ^Taking this same idea and transferring it to my clothing
 
 ---
 
-# What I envisioned
-
-![inline](led-couture-schema2.png)
+![fit](led-couture-schema2.png)
 
 ---
 
 ![](video)
+
+---
+
+# Pics of umbrella/skirt/necklace
 
 ---
 
@@ -112,25 +115,131 @@ footer: @stephaniecodes
 
 ---
 
-# Hardware Must-haves
+![right](IMG_1603.JPG)
 
-* Small hardware footprint
+# Faced lots of challenges
+
+---
+
+## _*Building stuff is all about*_ iteration
+
+---
+
+![](portugal.JPG)
+
+## So, let's take a journey
+
+---
+
+# Project Plan:
+
+* Web app for user input
+* LEDs + battery + microcontroller in clothing
+* Way to relay message from app to clothing
+
+[.build-lists: true]
+
+---
+
+# Web App
+
+* Plain ol' HTML5 + JavaScript page
+
+[.build-lists: true]
+
+---
+
+# Hardware
+
+* Beginner friendly
+* Small footprint
+* Durability
 * Wifi connectivity
 
-^Make as discrete as possible in my clothing
+[.build-lists: true]
+
+^Must be as discrete as possible in my clothing
 
 ---
 
-# Blah
+![left 80%](huzzah.jpg)
 
-\*
+# Adafruit Feather Huzzah ESP8266
+
+* Small
+* Wifi built-in
+* Lots of info/tutorials
+
+[.build-lists: true]
 
 ---
 
-# Challenges
+[.build-lists: true]
 
-\*
+# Talk to my clothes with Socket.IO
+
+* Used it in my Raspberry Pi art project
+* Already knew that it works
+* Easy setup: node.js server & client libraries
+
+^Communicate from web app to several pieces of hardware at once
+
+---
+
+![fit](led-couture-schema-socketio.png)
+
+---
+
+# Iteration #1
+
+Build/wiring montage
+
+SO MUCH WORK
+
+---
+
+# First Outing: Lighted Bike Ride Amsterdam
+
+![inline loop](bike-ride.mp4)
+
+^FAIL
+
+---
+
+# Fail
+
+^Embarrassed, disappointed
+
+---
+
+# Iteration #2
+
+How to make crash less
+
+---
+
+# Intro to MQTT
+
+blah
+
+---
+
+# Intro to MQTT
+
+blah
 
 ---
 
 # Demo time
+
+---
+
+# Thank you!
+
+(Now go create something wonderful!)
+
+🦄✌️✨
+
+[https://stephanie.lol](https://stephanie.lol)
+
+[@stephanicodes](https://twitter.com/stephaniecodes)
