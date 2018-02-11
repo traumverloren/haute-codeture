@@ -224,13 +224,13 @@ setup + loop
 
 # Iteration #2
 
-### Or, how to make it crash less
+### (Or, how to make it crash less)
 
 ---
 
 # Figure out where it was crashing
 
-* Use Serial Monitor (Log statements)
+* Use Serial Monitor in Arduino IDE (Log statements)
 
 ![inline](serial-monitor-1.png)
 
@@ -238,21 +238,19 @@ setup + loop
 
 # Figure out where it was crashing
 
-* Use Serial Monitor (Log statements)
+* Use Serial Monitor in Arduino IDE (Log statements)
 
 ![inline](serial-monitor-2.png)
 
 ---
 
-## Flaky connections
+## Flaky connection
 
 # <br>
 
 # 😢
 
 ---
-
-[.build-lists: true]
 
 ### _Socket.IO is_ great _for the web!_
 
@@ -262,22 +260,64 @@ setup + loop
 
 ---
 
-# Maybe there's a better suited communication solution?
-
-* Lightweight
-* Minimal Overhead
+### Just because the library is available, doesn't mean it's the best solution
 
 ---
 
-# Intro to MQTT
+[.build-lists: true]
 
-blah
+# Coding for Hardware
+
+* Resources are at a premium
+* Optimize for efficiency
+* Minimize overhead
+
+^Not communicating between browser and server for my hardware, so that overhead isn't needed.
 
 ---
 
-# Intro to MQTT
+## What else can I use?
 
-blah
+# <br><br><br><br><br><br><br><br><br><br><br>
+
+---
+
+## What else can I use?
+
+# <br>
+
+## ✨ MQTT ✨
+
+^Not communicating between browser and server for my hardware, so that overhead isn't needed.
+
+---
+
+[.build-lists: true]
+
+# MQTT
+
+* Developed in 1999
+* Connect remote oil pipelines over satellite connection
+
+^Born in 1999, where needed a solution that allowed for minimal battery loss and minimal bandwidth connecting oil pipelines over satellite connection.
+
+---
+
+[.build-lists: true]
+
+# MQTT Specification[^1]
+
+* Publish/subscribe messaging transport protocol
+* Ideal where a small code footprint is required and/or network bandwidth is at a premium.
+* Lightweight, open, easy to implement.
+
+[^1]: More on the [MQTT 3.1.1 specification](http://docs.oasis-open.org/mqtt/mqtt/v3.1.1/os/mqtt-v3.1.1-os.html)
+
+^Born in 1999, where needed a solution that allowed for minimal battery loss and minimal bandwidth connecting oil pipelines over satellite connection.
+
+---
+
+# Publish/subscribe messaging
 
 ---
 
