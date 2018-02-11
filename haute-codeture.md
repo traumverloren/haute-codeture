@@ -305,19 +305,50 @@ setup + loop
 
 [.build-lists: true]
 
-# MQTT Specification[^1]
+# MQTT 3.1.1 Specification
 
 * Publish/subscribe messaging transport protocol
-* Ideal where a small code footprint is required and/or network bandwidth is at a premium.
-* Lightweight, open, easy to implement.
-
-[^1]: More on the [MQTT 3.1.1 specification](http://docs.oasis-open.org/mqtt/mqtt/v3.1.1/os/mqtt-v3.1.1-os.html)
+* Lightweight
+* Easy to implement
+* Reliable
+* Open
 
 ^Born in 1999, where needed a solution that allowed for minimal battery loss and minimal bandwidth connecting oil pipelines over satellite connection.
 
 ---
 
-# Publish/subscribe messaging
+# Publish/subscribe
+
+![inline](final_pubsub.png)
+
+^MQTT is a publish/subscribe protocol that allows edge-of-network devices to publish to a broker. Clients connect to this broker, which then mediates communication between the two devices. Each device can subscribe, or register, to particular topics. When another client publishes a message on a subscribed topic, the broker forwards the message to any client that has subscribed.
+
+---
+
+[.build-lists: true]
+
+# Lightweight
+
+* Transport over TCP/IP
+* Minimal packet size (header) is 2 bytes! 😯
+
+^MQTT control packet headers are kept as small as possible. Each MQTT control packet consist of three parts, a fixed header, variable header and payload. Each MQTT control packet has a 2 byte Fixed header. Not all the control packet have the variable headers and payload. A variable header contains the packet identifier if used by the control packet. A payload up to 256 MB could be attached in the packets. Having a small header overhead makes this protocol appropriate for IoT by lowering the amount of data transmitted over constrained networks.
+
+---
+
+[.build-lists: true]
+
+# Easy to implement
+
+---
+
+[.build-lists: true]
+
+# Reliable
+
+---
+
+# Open
 
 ---
 
