@@ -176,7 +176,9 @@ footer: @stephaniecodes
 
 [.build-lists: true]
 
-# Talk to my clothes with Socket.IO
+# Talk to my clothes
+
+## Socket.IO
 
 * Used it in my Raspberry Pi art project
 * Already knew that it works
@@ -222,7 +224,48 @@ setup + loop
 
 # Iteration #2
 
-How to make crash less
+### Or, how to make it crash less
+
+---
+
+# Figure out where it was crashing
+
+* Use Serial Monitor (Log statements)
+
+![inline](serial-monitor-1.png)
+
+---
+
+# Figure out where it was crashing
+
+* Use Serial Monitor (Log statements)
+
+![inline](serial-monitor-2.png)
+
+---
+
+## Flaky connections
+
+# <br>
+
+# 😢
+
+---
+
+[.build-lists: true]
+
+### _Socket.IO is_ great _for the web!_
+
+### _but is the_ best _fit for my IoT Project?_
+
+^Geared for browsers, but I didn't need that extra overhead
+
+---
+
+# Maybe there's a better suited communication solution?
+
+* Lightweight
+* Minimal Overhead
 
 ---
 
@@ -235,6 +278,49 @@ blah
 # Intro to MQTT
 
 blah
+
+---
+
+# Iteration #2
+
+shiftr
+
+---
+
+# Iteration #2
+
+draw.io
+
+---
+
+# Iteration #2
+
+Relying on 3rd party service, meh
+
+---
+
+# Iteration #3
+
+buid my own broker
+
+---
+
+# Iteration #3
+
+Devops hell
+
+---
+
+# Iteration #3
+
+* building the broker
+* deploying on digital ocean
+
+---
+
+# Iteration #4
+
+* new microcontroller
 
 ---
 
