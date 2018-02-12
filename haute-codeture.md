@@ -307,9 +307,8 @@ setup + loop
 
 # MQTT 3.1.1 Specification
 
-* Publish/subscribe messaging transport protocol
+* Simple
 * Lightweight
-* Easy to implement
 * Reliable
 * Open
 
@@ -321,7 +320,16 @@ setup + loop
 
 ![inline](final_pubsub.png)
 
-^MQTT is a publish/subscribe protocol that allows edge-of-network devices to publish to a broker. Clients connect to this broker, which then mediates communication between the two devices. Each device can subscribe, or register, to particular topics. When another client publishes a message on a subscribed topic, the broker forwards the message to any client that has subscribed.
+^The MQTT messages are delivered asynchronously (“push”) through the publish subscribe architecture. Clients connect to this broker, which then mediates communication between the two devices. Each device can subscribe, or register, to particular topics. When another client publishes a message on a subscribed topic, the broker forwards the message to any client that has subscribed.
+^Space decoupling: Publisher and subscriber do not need to know each other
+^Time decoupling: Publisher and subscriber do not need to run at the same time.
+^Synchronization decoupling: Operations on both components are not halted during publish or receiving
+
+---
+
+![fit](mqtt-control-packet.jpg)
+
+[.hide-footer]
 
 ---
 
@@ -330,15 +338,9 @@ setup + loop
 # Lightweight
 
 * Transport over TCP/IP
-* Minimal packet size (header) is 2 bytes! 😯
+* Low overhead (2 bytes minimum) 😯
 
-^MQTT control packet headers are kept as small as possible. Each MQTT control packet consist of three parts, a fixed header, variable header and payload. Each MQTT control packet has a 2 byte Fixed header. Not all the control packet have the variable headers and payload. A variable header contains the packet identifier if used by the control packet. A payload up to 256 MB could be attached in the packets. Having a small header overhead makes this protocol appropriate for IoT by lowering the amount of data transmitted over constrained networks.
-
----
-
-[.build-lists: true]
-
-# Easy to implement
+^MQTT control packet headers are kept as small as possible. Each control packet has a specific purpose and every bit in the packet is carefully crafted to reduce the data transmitted over the network. Each MQTT control packet consist of three parts, a fixed header, variable header and payload. Each MQTT control packet has a 2 byte Fixed header. Not all the control packet have the variable headers and payload. A variable header contains the packet identifier if used by the control packet. A payload up to 256 MB could be attached in the packets. Having a small header overhead makes this protocol appropriate for IoT by lowering the amount of data transmitted over constrained networks.
 
 ---
 
@@ -346,9 +348,16 @@ setup + loop
 
 # Reliable
 
+* Quality of Service (QoS) levels
+* Offline messaging
+* Retained messages
+
 ---
 
 # Open
+
+* Open and standardized protocol
+* Clients for all kinds of device implementations
 
 ---
 
