@@ -188,7 +188,7 @@ footer: @stephaniecodes
 
 ---
 
-![fit](led-couture-schema-socketio.png)
+![fit](led-couture-schema-socketio-heroku.png)
 
 ---
 
@@ -260,7 +260,9 @@ setup + loop
 
 ---
 
-### Just because the library is available, doesn't mean it's the best solution
+### Just because a library is available, doesn't mean it's the best solution
+
+^So i took a step back and thought again about what i was up against coding for hardware.
 
 ---
 
@@ -272,7 +274,7 @@ setup + loop
 * Optimize for efficiency
 * Minimize overhead
 
-^Not communicating between browser and server for my hardware, so that overhead isn't needed.
+^Not communicating between browser and server for my hardware, so that extra overhead for HTTP isn't needed.
 
 ---
 
@@ -305,7 +307,7 @@ setup + loop
 
 [.build-lists: true]
 
-# MQTT 3.1.1 Specification
+# MQTT
 
 * Simple
 * Lightweight
@@ -352,24 +354,44 @@ setup + loop
 * Offline messaging
 * Retained messages
 
+^QoS: agreement between sender and receiver of a message regarding the guarantees of delivering a message (At most once, at least once, exactly once)
+^QoS is a major feature of MQTT, it makes communication in unreliable networks a lot easier because the protocol handles retransmission and guarantees the delivery of the message, regardless how unreliable the underlying transport is
+^Hook up a DB: Persistent session means even if the client is offline all the above will be stored by the broker and are available right after the client reconnects.
+
 ---
 
 # Open
 
 * Open and standardized protocol
-* Clients for all kinds of device implementations
+* Clients/brokers for all kinds of implementations
+
+---
+
+[.build-lists: true]
+
+# Iteration #2
+
+Implement my own broker?
+
+* Can't access MQTT port 1883 on Heroku
+* But, not ready to move services yet
+
+---
+
+[.build-lists: true]
+
+# shiftr.io
+
+IoT prototyping platform
+
+* Free
+* Easy setup
 
 ---
 
 # Iteration #2
 
-shiftr
-
----
-
-# Iteration #2
-
-draw.io
+draw.io diagram
 
 ---
 
