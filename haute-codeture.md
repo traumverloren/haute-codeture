@@ -105,10 +105,6 @@ footer: @stephaniecodes
 
 ---
 
-# Pics of umbrella/skirt/necklace
-
----
-
 ![left](IMG_1351.JPG)
 
 # First big **Arduino** project
@@ -131,23 +127,17 @@ footer: @stephaniecodes
 
 ---
 
+[.build-lists: true]
+
 # Project Plan:
 
 * Web app for user input
 * LEDs + battery + microcontroller in clothing
 * Way to relay message from app to clothing
 
-[.build-lists: true]
-
 ---
 
-# Web App
-
-* Plain ol' HTML5 + JavaScript page
-
 [.build-lists: true]
-
----
 
 # Hardware
 
@@ -156,11 +146,11 @@ footer: @stephaniecodes
 * Durability
 * Wifi connectivity
 
-[.build-lists: true]
-
 ^Must be as discrete as possible in my clothing
 
 ---
+
+[.build-lists: true]
 
 ![left 80%](huzzah.jpg)
 
@@ -169,8 +159,6 @@ footer: @stephaniecodes
 * Small
 * Wifi built-in
 * Lots of info/tutorials
-
-[.build-lists: true]
 
 ---
 
@@ -197,14 +185,6 @@ footer: @stephaniecodes
 Build/wiring montage
 
 SO MUCH WORK
-
----
-
-# Iteration #1
-
-Coding Arduino
-
-setup + loop
 
 ---
 
@@ -320,7 +300,7 @@ setup + loop
 
 # Publish/subscribe
 
-![inline](final_pubsub.png)
+![inline](mqtt-pubsub-diagram.png)
 
 ^The MQTT messages are delivered asynchronously (“push”) through the publish subscribe architecture. Clients connect to this broker, which then mediates communication between the two devices. Each device can subscribe, or register, to particular topics. When another client publishes a message on a subscribed topic, the broker forwards the message to any client that has subscribed.
 ^Space decoupling: Publisher and subscriber do not need to know each other
@@ -360,21 +340,68 @@ setup + loop
 
 ---
 
+[.build-lists: true]
+
 # Open
 
 * Open and standardized protocol
 * Clients/brokers for all kinds of implementations
+  ![inline 100%](mqtt-list.png)
+
+---
+
+# Setup Clients + a MQTT Broker
+
+![inline](mqtt-pubsub-diagram.png)
+
+---
+
+# MQTT.js
+
+```javascript
+var mqtt = require("mqtt");
+var client = mqtt.connect(MQTT_BROKER_URL);
+
+function sendEvent(program) {
+  client.publish("lights", program);
+}
+
+var rainbowButton = document.getElementById("rainbowButton");
+rainbowButton.addEventListener("click", () => sendEvent("rainbow"));
+```
+
+---
+
+# Arduino-MQTT
+
+```c
+#include <MQTTClient.h>
+
+WiFiClient net;
+MQTTClient client;
+
+void setup() {
+  WiFi.begin(SSID, PW);
+  client.begin(MQTT_BROKER_URL, net);
+  client.onMessage(messageReceived);
+
+  client.connect("necklace", KEY, TOKEN);
+  client.subscribe("lights");
+}
+
+void loop() {
+  client.loop();
+}
+```
 
 ---
 
 [.build-lists: true]
 
-# Iteration #2
+# MQTT Broker
 
-Implement my own broker?
-
-* Can't access MQTT port 1883 on Heroku
-* But, not ready to move services yet
+* Can't on Heroku (ports not accessible) 😦
+* But... not ready to move services and do devops stuff yet 😮
 
 ---
 
@@ -389,44 +416,59 @@ IoT prototyping platform
 
 ---
 
-# Iteration #2
-
-draw.io diagram
+![inline](mqtt-shiftr-schema.png)
 
 ---
 
-# Iteration #2
+## Less Crashing!
 
-Relying on 3rd party service, meh
+#<br>
 
----
-
-# Iteration #3
-
-buid my own broker
+## 🙌
 
 ---
 
-# Iteration #3
+### Relying on a small 3rd party service...
 
-Devops hell
+### **not optimal**
+
+^Too many unknowns: great for prototyping but relying on for my whole project, too risky.
 
 ---
 
 # Iteration #3
+
+### Build my own MQTT broker!
+
+---
+
+[.build-lists: true]
+
+# Building a MQTT Broker
+
+* Need access to port 1883
+* Heroku → Digital Ocean
+* First time devops<br>😮 → 😭 → 👍
+
+---
+
+# Building a MQTT Broker
 
 * building the broker
-* deploying on digital ocean
 
 ---
 
 # Iteration #4
 
-* new microcontroller
+* new microcontroller!
 
 ---
 
 # Demo time
+
+---
+
+## Lessons Learned
 
 ---
 
