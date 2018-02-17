@@ -76,11 +76,11 @@ footer: @stephaniecodes
 
 # Creating art with a raspberry pi
 
-🎨 [https://light-art.herokuapp.com](https://light-art.herokuapp.com)
+🎨 [light-art.herokuapp.com](https://light-art.herokuapp.com)
 
-📓 [https://stephanie.lol/codeland](https://stephanie.lol/codeland)
+📓 [stephanie.lol/codeland](https://stephanie.lol/codeland)
 
-📹 [https://goo.gl/mK5afh](https://www.youtube.com/watch?v=eud6LnzVISM)
+📹 [goo.gl/mK5afh](https://www.youtube.com/watch?v=eud6LnzVISM)
 
 ^Inspired by the reaction to my pixel art project
 ^Take the experience out of my living room
@@ -101,7 +101,7 @@ footer: @stephaniecodes
 
 ---
 
-![](video)
+![](haute-codeture-video.mp4)
 
 ---
 
@@ -118,12 +118,6 @@ footer: @stephaniecodes
 ---
 
 ## _*Building stuff is all about*_ iteration
-
----
-
-![](portugal.JPG)
-
-## So, let's take a journey
 
 ---
 
@@ -180,11 +174,9 @@ footer: @stephaniecodes
 
 ---
 
-# Iteration #1
+# Build process
 
-Build/wiring montage
-
-SO MUCH WORK
+![inline fill](iteration-1-build.jpg)![inline fill](iteration-1-build-skirt.jpg)
 
 ---
 
@@ -276,23 +268,9 @@ SO MUCH WORK
 
 [.build-lists: true]
 
-# MQTT
+# What is MQTT?
 
-* Developed in 1999
-* Connect remote oil pipelines over satellite connection
-
-^Born in 1999, where needed a solution that allowed for minimal battery loss and minimal bandwidth connecting oil pipelines over satellite connection.
-
----
-
-[.build-lists: true]
-
-# MQTT
-
-* Simple
-* Lightweight
-* Reliable
-* Open
+M2M/IoT connectivity protocol
 
 ^Born in 1999, where needed a solution that allowed for minimal battery loss and minimal bandwidth connecting oil pipelines over satellite connection.
 
@@ -302,16 +280,10 @@ SO MUCH WORK
 
 ![inline](mqtt-pubsub-diagram.png)
 
-^The MQTT messages are delivered asynchronously (“push”) through the publish subscribe architecture. Clients connect to this broker, which then mediates communication between the two devices. Each device can subscribe, or register, to particular topics. When another client publishes a message on a subscribed topic, the broker forwards the message to any client that has subscribed.
+^MQTT is a publish/subscribe protocol that allows edge-of-network devices to publish to a broker. Clients connect to this broker, which then mediates communication between the two devices. Each device can subscribe, or register, to particular topics. When another client publishes a message on a subscribed topic, the broker forwards the message to any client that has subscribed.
 ^Space decoupling: Publisher and subscriber do not need to know each other
 ^Time decoupling: Publisher and subscriber do not need to run at the same time.
 ^Synchronization decoupling: Operations on both components are not halted during publish or receiving
-
----
-
-![fit](mqtt-control-packet.jpg)
-
-[.hide-footer]
 
 ---
 
@@ -320,9 +292,15 @@ SO MUCH WORK
 # Lightweight
 
 * Transport over TCP/IP
-* Low overhead (2 bytes minimum) 😯
+* 2 byte overhead
 
 ^MQTT control packet headers are kept as small as possible. Each control packet has a specific purpose and every bit in the packet is carefully crafted to reduce the data transmitted over the network. Each MQTT control packet consist of three parts, a fixed header, variable header and payload. Each MQTT control packet has a 2 byte Fixed header. Not all the control packet have the variable headers and payload. A variable header contains the packet identifier if used by the control packet. A payload up to 256 MB could be attached in the packets. Having a small header overhead makes this protocol appropriate for IoT by lowering the amount of data transmitted over constrained networks.
+
+---
+
+# Flexible
+
+* Data agnostic
 
 ---
 
@@ -340,13 +318,7 @@ SO MUCH WORK
 
 ---
 
-[.build-lists: true]
-
-# Open
-
-* Open and standardized protocol
-* Clients/brokers for all kinds of implementations
-  ![inline 100%](mqtt-list.png)
+# MQTT all the things
 
 ---
 
@@ -356,7 +328,7 @@ SO MUCH WORK
 
 ---
 
-# MQTT.js
+# MQTT.js Client
 
 ```javascript
 var mqtt = require("mqtt");
@@ -372,7 +344,7 @@ rainbowButton.addEventListener("click", () => sendEvent("rainbow"));
 
 ---
 
-# Arduino-MQTT
+# Arduino-MQTT Client
 
 ```c
 #include <MQTTClient.h>
@@ -400,7 +372,7 @@ void loop() {
 
 # MQTT Broker
 
-* Can't on Heroku (ports not accessible) 😦
+* Can't create my own on Heroku (ports not accessible)
 * But... not ready to move services and do devops stuff yet 😮
 
 ---
@@ -416,11 +388,11 @@ IoT prototyping platform
 
 ---
 
-![inline](mqtt-shiftr-schema.png)
+![inline](mqtt-shiftr-diagram.png)
 
 ---
 
-## Less Crashing!
+## Way less crashes!
 
 #<br>
 
@@ -428,7 +400,7 @@ IoT prototyping platform
 
 ---
 
-### Relying on a small 3rd party service...
+### Relying on a small external broker service...
 
 ### **not optimal**
 
@@ -444,7 +416,7 @@ IoT prototyping platform
 
 [.build-lists: true]
 
-# Building a MQTT Broker
+# Build a MQTT Broker
 
 * Need access to port 1883
 * Heroku → Digital Ocean
@@ -452,15 +424,85 @@ IoT prototyping platform
 
 ---
 
-# Building a MQTT Broker
+# Build a MQTT Broker
 
-* building the broker
+![inline](mqtt-own-broker-initial.png)
 
 ---
 
-# Iteration #4
+# Aedes
 
-* new microcontroller!
+![inline](aedes-github.png)
+
+[https://github.com/mcollina/aedes](https://github.com/mcollina/aedes)
+
+---
+
+IMPLEMENT THE MQTT BROKER
+
+```javascript
+const express = require("express");
+const app = express();
+const path = require("path");
+const aedes = require("aedes")();
+const mqttServer = require("net").createServer(aedes.handle);
+const httpServer = require("http").createServer(app);
+const ws = require("websocket-stream");
+const mqttPort = 1883;
+const appPort = 8080;
+
+mqttServer.listen(mqttPort, function() {});
+httpServer.listen(appPort, function() {});
+
+ws.createServer({ server: httpServer }, aedes.handle);
+```
+
+---
+
+## Iteration #4
+
+# <br><br><br><br><br><br>
+
+---
+
+## Iteration #4
+
+#### (aka last thing I changed)
+
+### Upgrade Microcontroller
+
+---
+
+[.build-lists: true]
+
+![left 110%](feather-m0.jpg)
+
+## Adafruit Feather M0 WiFi
+
+* Low power management
+* Separate Wifi module
+* High speed, reliable Wifi 🤩
+* 2X cost of Feather Huzzah
+
+^Doesn't have to yield to wifi core, steady wifi throughput
+
+---
+
+[.build-lists: true]
+
+## What next?
+
+* Feather M0 has full python interpreter onboard
+
+* Rewrite Arduino/C++ code in CircuitPython!
+
+![inline](circuitpython.png)
+
+---
+
+After all those iterations, I'm happy that I can share the fun with others!
+
+![inline fill](haute-codeture-end.mov)
 
 ---
 
@@ -468,16 +510,20 @@ IoT prototyping platform
 
 ---
 
-## Lessons Learned
+## flashylights.nl
+
+^Fun to experiment with hardware to create new ways of interaction
+^Devops is a skill I need to develop
+^Soldering is not so bad (even thouh I still mess up)
 
 ---
 
 # Thank you!
 
-(Now go create something wonderful!)
+Now go create something wonderful!
 
-🦄✌️✨
+🦄✌☮️️✨
 
-[https://stephanie.lol](https://stephanie.lol)
+[stephanie.lol](https://stephanie.lol)
 
 [@stephanicodes](https://twitter.com/stephaniecodes)
