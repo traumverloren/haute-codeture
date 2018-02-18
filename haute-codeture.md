@@ -300,7 +300,7 @@ M2M/IoT connectivity protocol
 
 # Flexible
 
-* Data agnostic
+* Data agnostic payload
 
 ---
 
@@ -420,7 +420,7 @@ IoT prototyping platform
 
 * Need access to port 1883
 * Heroku → Digital Ocean
-* First time devops<br>😮 → 😭 → 👍
+* Embed MQTT Broker in Express server
 
 ---
 
@@ -456,6 +456,14 @@ httpServer.listen(appPort, function() {});
 
 ws.createServer({ server: httpServer }, aedes.handle);
 ```
+
+---
+
+[.build-lists: true]
+
+* Implementation of MQTT Broker within Node app 😎
+* First time devops<br>😮 → 😭 → 👍
+* It works!
 
 ---
 
@@ -519,8 +527,6 @@ After all those iterations, I'm happy that I can share the fun with others!
 ---
 
 # Thank you!
-
-Now go create something wonderful!
 
 🦄✌☮️️✨
 
