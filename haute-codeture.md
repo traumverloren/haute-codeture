@@ -520,6 +520,16 @@ After all those iterations, I'm happy that I can share the fun with others!
 
 ## flashylights.nl
 
+---
+
+# Final thoughts
+
+^Fun to experiment with hardware to create new ways of interaction
+^Devops is a skill I need to develop
+^Soldering is not so bad (even thouh I still mess up)
+
+---
+
 ^Fun to experiment with hardware to create new ways of interaction
 ^Devops is a skill I need to develop
 ^Soldering is not so bad (even thouh I still mess up)
