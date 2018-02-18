@@ -190,6 +190,8 @@ footer: @stephaniecodes
 
 # Fail
 
+![inline autoplay loop](sigh.mp4)
+
 ^Embarrassed, disappointed
 
 ---
@@ -298,6 +300,8 @@ M2M/IoT connectivity protocol
 
 ---
 
+[.build-lists: true]
+
 # Flexible
 
 * Data agnostic payload
@@ -318,13 +322,19 @@ M2M/IoT connectivity protocol
 
 ---
 
-# MQTT all the things
+![fit](allthethings.jpg)
 
 ---
 
 # Setup Clients + a MQTT Broker
 
 ![inline](mqtt-pubsub-diagram.png)
+
+---
+
+# Setup Web App Client
+
+![inline](mqtt-pubsub-diagram-arrow-app.png)
 
 ---
 
@@ -341,6 +351,12 @@ function sendEvent(program) {
 var rainbowButton = document.getElementById("rainbowButton");
 rainbowButton.addEventListener("click", () => sendEvent("rainbow"));
 ```
+
+---
+
+# Setup Arduino Clients
+
+![inline](mqtt-pubsub-diagram-arrow-arduino.png)
 
 ---
 
@@ -368,6 +384,12 @@ void loop() {
 
 ---
 
+# Setup MQTT Broker
+
+![inline](mqtt-pubsub-diagram-arrow-broker.png)
+
+---
+
 [.build-lists: true]
 
 # MQTT Broker
@@ -392,11 +414,7 @@ IoT prototyping platform
 
 ---
 
-## Way less crashes!
-
-#<br>
-
-## 🙌
+![inline autoplay loop](hoorayquestionmark.mp4)
 
 ---
 
@@ -420,13 +438,14 @@ IoT prototyping platform
 
 * Need access to port 1883
 * Heroku → Digital Ocean
-* Embed MQTT Broker in Express server
 
 ---
 
 # Build a MQTT Broker
 
 ![inline](mqtt-own-broker-initial.png)
+
+^Embed MQTT Broker in Express server
 
 ---
 
@@ -459,11 +478,7 @@ ws.createServer({ server: httpServer }, aedes.handle);
 
 ---
 
-[.build-lists: true]
-
-* Implementation of MQTT Broker within Node app 😎
-* First time devops<br>😮 → 😭 → 👍
-* It works!
+![](ballmer.gif)
 
 ---
 
@@ -502,37 +517,17 @@ ws.createServer({ server: httpServer }, aedes.handle);
 
 * Feather M0 has full python interpreter onboard
 
-* Rewrite Arduino/C++ code in CircuitPython!
-
-![inline](circuitpython.png)
+* Rewrite Arduino/C++ code in CircuitPython!<br><br>![inline 60%](circuitpython.png)
 
 ---
 
-After all those iterations, I'm happy that I can share the fun with others!
-
-![inline fill](haute-codeture-end.mov)
-
----
-
-# Demo time
-
----
-
-## flashylights.nl
+![loop](haute-codeture-end.mov)
 
 ---
 
 # Final thoughts
 
-^Fun to experiment with hardware to create new ways of interaction
-^Devops is a skill I need to develop
-^Soldering is not so bad (even thouh I still mess up)
-
----
-
-^Fun to experiment with hardware to create new ways of interaction
-^Devops is a skill I need to develop
-^Soldering is not so bad (even thouh I still mess up)
+^It can take many iterations to get something right or where you want it to be and that's ok. I messed a bunch during this with trying to figure out devops and doing sloppy soldering, and it was super frustrating, but it all helped me learn and improve my skills.
 
 ---
 
