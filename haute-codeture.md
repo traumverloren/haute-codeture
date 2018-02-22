@@ -19,11 +19,16 @@ footer: @stephaniecodes
 
 - Organizer of [Stupid Hackathon Amsterdam](http://www.stupidhackathon.wtf)
 
+^I live in Amsterdam.
+^Dev for a total 3 years, last yr as a frontend/js dev
+^Frontend dev @ werkspot
+^Organizer of Stupid Hackathon Amsterdam
+
 ---
 
-## I like building beautiful, useless things.
+## I like building<br/>useless (but joyful) things.
 
-^ What does that even mean? I've only been working on hardware for a year.
+^You should know, I've only been working with hardware for the past year.
 
 ---
 
