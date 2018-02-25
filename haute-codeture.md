@@ -13,22 +13,28 @@ footer: @stephaniecodes
 
 ---
 
+[.build-lists: true]
+
 # Hi, I'm Stephanie.
 
 * Frontend Developer @ [Werkspot](https://werkspot.nl)
 
-- Organizer of [Stupid Hackathon Amsterdam](http://www.stupidhackathon.wtf)
+- Organizer of [Stupid Hackathon Amsterdam](http://www.stupidhackathon.wtf)<br><br><br>![inline 100%](stupid-hack.jpg)
 
 ^I live in Amsterdam.
+
 ^Dev for a total 3 years, last yr as a frontend/js dev
+
 ^Frontend dev @ werkspot
+
 ^Organizer of Stupid Hackathon Amsterdam
 
 ---
 
-## I like building<br/>useless (but joyful) things.
+## I like building<br>useless (but joyful) things.
 
 ^You should know, I've only been working with hardware for the past year.
+
 ^And I didn't get into hardware cuz I had a project in mind to automate some part of my life or even cuz I saw something cool someone made on twitter.
 
 ---
@@ -39,7 +45,9 @@ footer: @stephaniecodes
 ![original](stedelijk.jpg)
 
 ^I got into hardware cuz I got inspire by a visit to an art museum.
+
 ^Stedelijk museum in Amsterdam
+
 ^I went to see an exhibition of art by Jean Tinguely.
 
 ---
@@ -50,25 +58,36 @@ footer: @stephaniecodes
 
 ![original](tinguely.jpg)
 
-^- Jean Tinguely
-^- Swiss, 60s/70s
-^- Art NOT about standing in a sterile white space, distantly gazing silent painting
-^- Art meant to be playful
-^- He made machines produce art themselves
-^- Large installations meant to be triggered by a viewer
-^- Interested in making art interactive w/ viewer
-^- Therefore Blurring line artist/viewer
+^ Jean Tinguely
+
+^ Swiss, 60s/70s
+
+^ Art NOT about standing in a sterile white space, distantly gazing silent painting
+
+^ Art meant to be playful
+
+^ He made machines produce art themselves
+
+^ Large installations meant to be triggered by a viewer
+
+^ Interested in making art interactive w/ viewer
+
+^ Therefore Blurring line artist/viewer
 
 ---
 
 > I wanted something ephemeral that would pass like a falling star...The work had to just transpire, make people dream and talk, and that would be all.
 > -- Jean Tinguely
 
-^- When I was at the exhibit, this quote stood out to me.
-^- Really liked idea of a temporary experience that connects artist and viewer
-^-It's spontaneous and,
-^- Only meant to bring joy
-^- Inspire for short time
+^ When I was at the exhibit, this quote stood out to me.
+
+^ Really liked idea of a temporary experience that connects artist and viewer
+
+^ It's spontaneous and,
+
+^ Only meant to bring joy
+
+^ Inspire for short time
 
 ---
 
@@ -77,8 +96,11 @@ footer: @stephaniecodes
 ![inline loop](react-native-demo.mp4)
 
 ^I was so inspired by the exhibit, that I was inspired to tackle hardware for the first time and build my own version for pixel art.
+
 ^Person creates a pixel art design on a web app
+
 ^Sends it to my raspberry pi
+
 ^Shows up on my rpi in my living room
 
 ---
@@ -88,8 +110,11 @@ footer: @stephaniecodes
 ![inline](rpi-pixel-diagram.png)
 
 ^React app, socketio server, rpi
+
 ^Users create pixel art designs on the react web app
+
 ^Sent to the socketio server deployed on heroku
+
 ^then sent to raspberry pi and shows up on my pi in my living room!
 
 ---
@@ -98,13 +123,14 @@ footer: @stephaniecodes
 
 🎨 [light-art.herokuapp.com](https://light-art.herokuapp.com)
 
-📓 [stephanie.lol/codeland](https://stephanie.lol/codeland)
-
 📹 [goo.gl/mK5afh](https://www.youtube.com/watch?v=eud6LnzVISM)
 
 ^I gave my first conf talk last year about this project.
-^You can check out the project, or my slides, or video.
+
+^You can check out the project or video.
+
 ^Really inspired by the reaction to my pixel art project
+
 ^Started thinking how I can take the experience out of my living room.
 
 ---
@@ -122,7 +148,9 @@ footer: @stephaniecodes
 ![fit](led-couture-schema2.png)
 
 ^User picks a program
+
 ^Send that info to a server
+
 ^that sends it to arduino and leds in my clothing
 
 ---
@@ -158,7 +186,9 @@ footer: @stephaniecodes
 * Way to relay message from app to clothing
 
 ^Create web app for users
+
 ^Integrate LEDS and microcontroller into clothing pieces
+
 ^and a way to send programs from web to clothing
 
 ---
@@ -187,7 +217,9 @@ footer: @stephaniecodes
 * Lots of info/tutorials
 
 ^I chose this arduino.
+
 ^it's small, has built-in wifi
+
 ^very popular microchip so lots of info online
 
 ---
@@ -203,6 +235,7 @@ footer: @stephaniecodes
 * Easy setup: node.js server & client libraries
 
 ^I knew it worked well for my rpi pixel art
+
 ^Communicate from web app to several pieces of hardware at once
 
 ---
@@ -215,7 +248,9 @@ footer: @stephaniecodes
 
 ![inline fill](iteration-1-build.jpg)![inline fill](iteration-1-build-skirt.jpg)
 
-^so, the build process: basically me sitting on the floor in my living room of my tiny amsterdam apartment, and constructing each piece, testing, and fixing soldering mistakes lol
+^So, the build process:
+
+^Basically me sitting on the floor in my living room of my tiny amsterdam apartment, and constructing each piece, testing, and fixing soldering mistakes lol
 
 ---
 
@@ -224,6 +259,7 @@ footer: @stephaniecodes
 ![inline loop](bike-ride.mp4)
 
 ^So excited to take it out in public!
+
 ^But super FAIL
 
 ---
@@ -251,6 +287,7 @@ footer: @stephaniecodes
 ![inline](serial-monitor-1.png)
 
 ^Lucky for me, the microcontroller i chose supports monitoring when plugged into my computer
+
 ^put in log statements at all diff bits of the code
 
 ---
@@ -280,6 +317,7 @@ footer: @stephaniecodes
 ### _but is the_ best _fit for my IoT Project?_
 
 ^Made for web applications communicated over HTTP
+
 ^Geared for browsers, but I didn't need that extra overhead
 
 ---
@@ -314,6 +352,7 @@ footer: @stephaniecodes
 ## ✨ MQTT ✨
 
 ^M2M/IoT connectivity protocol
+
 ^Born in 1999, where needed a solution that allowed for minimal battery loss and minimal bandwidth connecting oil pipelines over satellite connection.
 
 ---
@@ -323,11 +362,17 @@ footer: @stephaniecodes
 ![inline](mqtt-pubsub-diagram.png)
 
 ^Consists of clients and a broker.
+
 ^Clients connect to the broker, which then mediates communication between the two devices.
+
 ^Each device can subscribe, or register, to particular topics.
+
 ^When another client publishes a message on a subscribed topic, the broker forwards the message to any client that has subscribed.
+
 ^Space decoupling: Publisher and subscriber do not need to know each other
+
 ^Time decoupling: Publisher and subscriber do not need to run at the same time.
+
 ^Synchronization decoupling: Operations on both components are not halted during publish or receiving
 
 ---
@@ -340,11 +385,17 @@ footer: @stephaniecodes
 * 2 byte overhead
 
 ^MQTT control packet headers are kept as small as possible.
+
 ^Having a small header overhead makes this protocol appropriate for IoT by lowering the amount of data transmitted over constrained networks.
+
 ^Each control packet has a specific purpose and every bit in the packet is carefully crafted to reduce the data transmitted over the network.
+
 ^Each MQTT control packet consist of three parts, a fixed header, variable header and payload.
+
 ^Each MQTT control packet has a 2 byte Fixed header.
+
 ^Not all the control packet have the variable headers and payload.
+
 ^A payload up to 256 MB could be attached in the packets.
 
 ---
@@ -368,8 +419,11 @@ footer: @stephaniecodes
 * Retained messages
 
 ^QoS: agreement between sender and receiver of a message regarding the guarantees of delivering a message
+
 ^(At most once, at least once, exactly once)
+
 ^QoS is a major feature of MQTT, it makes communication in unreliable networks a lot easier because the protocol handles retransmission and guarantees the delivery of the message, regardless how unreliable the underlying transport is
+
 ^Hook up a DB: Persistent session means even if the client is offline all the above will be stored by the broker and are available right after the client reconnects.
 
 ---
@@ -395,6 +449,7 @@ footer: @stephaniecodes
 ![inline 30%](MQTTjs.png)
 
 ^yay can use MQTT in the browser!
+
 ^MQTT.js is a client library for the MQTT protocol, written in JavaScript for node.js and the browser.
 
 ---
@@ -416,9 +471,13 @@ rainbowButton.addEventListener("click", () => sendEvent("rainbow"));
 ```
 
 ^Easy to follow
+
 ^Only a couple lines of code to implement.
+
 ^Include the library
+
 ^Create a client that connects to wherever url the mqtt broker is located
+
 ^Whenever the rainbowButton is clicked, sends the program "rainbow" to the broker
 
 ---
@@ -455,10 +514,15 @@ void loop() {
 ```
 
 ^Easy to follow even if you aren't familiar with coding for arduino!
+
 ^Only a couple lines of code to implement.
+
 ^Include the library
+
 ^Connect client to mqtt broker thru the url
+
 ^Subscribes to topic "lights"
+
 ^Whenever message is received, onMessage method is called.
 
 ---
@@ -492,6 +556,7 @@ IoT prototyping platform
 * Easy setup
 
 ^Sign up and get a key/token and ready to roll
+
 ^Also doesn't seem to be a limitation on # of messages per min
 
 ---
@@ -499,6 +564,7 @@ IoT prototyping platform
 ![inline](mqtt-shiftr-diagram.png)
 
 ^Look it's my setup
+
 ^And it worked great!
 
 ---
@@ -514,6 +580,7 @@ IoT prototyping platform
 ### **not optimal**
 
 ^Too many unknowns: great for prototyping but relying on for my whole project, too risky.
+
 ^So you can guess what I probably did next...
 
 ---
@@ -534,6 +601,7 @@ IoT prototyping platform
 * Heroku → Digital Ocean
 
 ^Like I mentioned before, I had deployed my app on heroku but unfortunately could access the ports I needed
+
 ^Decided to try my luck at configuring/deploying it on digital ocean since i could access ports i need there.
 
 ---
@@ -543,6 +611,7 @@ IoT prototyping platform
 ![inline](mqtt-own-broker-initial.png)
 
 ^Embed MQTT Broker in Express server
+
 ^Final configuration
 
 ---
@@ -554,6 +623,7 @@ IoT prototyping platform
 [https://github.com/mcollina/aedes](https://github.com/mcollina/aedes)
 
 ^To implement the MQTT broker, used this library
+
 ^broker is embeddable in my current express server, minimal configuration change
 
 ---
@@ -579,6 +649,16 @@ httpServer.listen(appPort, function() {});
 // Augment the HTTP server with MQTT-over-websocket capabilities
 ws.createServer({ server: httpServer }, aedes.handle);
 ```
+
+^Only a couple lines of code to implement.
+
+^Include the library
+
+^Create MQTT server & HTTP server
+
+^Listen on the specified port
+
+^Then addon so the HTTP server has MQTT over websocket capabilities so that it can handle MQTT connections from clients in the browser (our web app)
 
 ---
 
@@ -638,7 +718,17 @@ ws.createServer({ server: httpServer }, aedes.handle);
 
 # Final thoughts
 
-^It can take many iterations to get something right or where you want it to be and that's ok. I messed a bunch during this with trying to figure out devops and doing sloppy soldering, and it was super frustrating, but it all helped me learn and improve my skills.
+^It can take many iterations to get something right
+
+^Or where you want it to be and that's ok.
+
+^I messed a bunch during this with trying to figure out devops
+
+^and doing sloppy soldering,
+
+^and it was super frustrating,
+
+^but it all helped me learn and improve my skills.
 
 ---
 
