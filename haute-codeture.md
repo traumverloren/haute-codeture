@@ -410,19 +410,26 @@ footer: @stephaniecodes
 
 ---
 
-[.build-lists: true]
-
 # Reliable
 
-* Quality of Service (QoS) levels
-* Offline messaging
-* Retained messages
+* Quality of Service (QoS) levels<br><br>![inline 99%](qos.jpg)[^*]
+
+[^*]: Image taken from [MQTT - A practical protocol for the Internet of Things](http://www.slideshare.net/BryanBoyd/mqtt-austin-api)
 
 ^QoS: agreement between sender and receiver of a message regarding the guarantees of delivering a message
 
 ^(At most once, at least once, exactly once)
 
 ^QoS is a major feature of MQTT, it makes communication in unreliable networks a lot easier because the protocol handles retransmission and guarantees the delivery of the message, regardless how unreliable the underlying transport is
+
+---
+
+[.build-lists: true]
+
+# Reliable
+
+* Offline messaging
+* Retained messages
 
 ^Hook up a DB: Persistent session means even if the client is offline all the above will be stored by the broker and are available right after the client reconnects.
 
@@ -597,8 +604,8 @@ IoT prototyping platform
 
 # Build a MQTT Broker
 
-* Need access to port 1883
-* Heroku → Digital Ocean
+1. Heroku → Digital Ocean
+2. Implement Broker
 
 ^Like I mentioned before, I had deployed my app on heroku but unfortunately could access the ports I needed
 
@@ -616,7 +623,7 @@ IoT prototyping platform
 
 ---
 
-# Aedes
+# MQTT Broker: AEDES
 
 ![inline](aedes-github.png)
 
@@ -671,6 +678,9 @@ ws.createServer({ server: httpServer }, aedes.handle);
 # <br><br><br><br><br><br>
 
 ^Awesome!
+
+^I conquered my devops fears and it worked!
+
 ^I was done right?
 
 ---
