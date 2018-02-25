@@ -29,6 +29,7 @@ footer: @stephaniecodes
 ## I like building<br/>useless (but joyful) things.
 
 ^You should know, I've only been working with hardware for the past year.
+^And I didn't get into hardware cuz I had a project in mind to automate some part of my life or even cuz I saw something cool someone made on twitter.
 
 ---
 
@@ -36,6 +37,10 @@ footer: @stephaniecodes
 
 #<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 ![original](stedelijk.jpg)
+
+^I got into hardware cuz I got inspire by a visit to an art museum.
+^Stedelijk museum in Amsterdam
+^I went to see an exhibition of art by Jean Tinguely.
 
 ---
 
@@ -71,11 +76,21 @@ footer: @stephaniecodes
 
 ![inline loop](react-native-demo.mp4)
 
+^I was so inspired by the exhibit, that I was inspired to tackle hardware for the first time and build my own version for pixel art.
+^Person creates a pixel art design on a web app
+^Sends it to my raspberry pi
+^Shows up on my rpi in my living room
+
 ---
 
 # My first project
 
 ![inline](rpi-pixel-diagram.png)
+
+^React app, socketio server, rpi
+^Users create pixel art designs on the react web app
+^Sent to the socketio server deployed on heroku
+^then sent to raspberry pi and shows up on my pi in my living room!
 
 ---
 
@@ -87,8 +102,10 @@ footer: @stephaniecodes
 
 📹 [goo.gl/mK5afh](https://www.youtube.com/watch?v=eud6LnzVISM)
 
-^Inspired by the reaction to my pixel art project
-^Take the experience out of my living room
+^I gave my first conf talk last year about this project.
+^You can check out the project, or my slides, or video.
+^Really inspired by the reaction to my pixel art project
+^Started thinking how I can take the experience out of my living room.
 
 ---
 
@@ -104,9 +121,15 @@ footer: @stephaniecodes
 
 ![fit](led-couture-schema2.png)
 
+^User picks a program
+^Send that info to a server
+^that sends it to arduino and leds in my clothing
+
 ---
 
 ![](haute-codeture-video.mp4)
+
+^describe video
 
 ---
 
@@ -131,8 +154,12 @@ footer: @stephaniecodes
 # Project Plan:
 
 * Web app for user input
-* LEDs + battery + microcontroller in clothing
+* LEDs + microcontroller in clothing
 * Way to relay message from app to clothing
+
+^Create web app for users
+^Integrate LEDS and microcontroller into clothing pieces
+^and a way to send programs from web to clothing
 
 ---
 
@@ -145,7 +172,7 @@ footer: @stephaniecodes
 * Durability
 * Wifi connectivity
 
-^Must be as discrete as possible in my clothing
+^Must be as discrete/small as possible in my clothing
 
 ---
 
@@ -159,6 +186,10 @@ footer: @stephaniecodes
 * Wifi built-in
 * Lots of info/tutorials
 
+^I chose this arduino.
+^it's small, has built-in wifi
+^very popular microchip so lots of info online
+
 ---
 
 [.build-lists: true]
@@ -171,6 +202,7 @@ footer: @stephaniecodes
 * Already knew that it works
 * Easy setup: node.js server & client libraries
 
+^I knew it worked well for my rpi pixel art
 ^Communicate from web app to several pieces of hardware at once
 
 ---
@@ -183,13 +215,16 @@ footer: @stephaniecodes
 
 ![inline fill](iteration-1-build.jpg)![inline fill](iteration-1-build-skirt.jpg)
 
+^so, the build process: basically me sitting on the floor in my living room of my tiny amsterdam apartment, and constructing each piece, testing, and fixing soldering mistakes lol
+
 ---
 
 # First Outing: Lighted Bike Ride Amsterdam
 
 ![inline loop](bike-ride.mp4)
 
-^FAIL
+^So excited to take it out in public!
+^But super FAIL
 
 ---
 
@@ -205,6 +240,8 @@ footer: @stephaniecodes
 
 ### (Or, how to make it crash less)
 
+^An opportunity to troubleshoot and make it work better
+
 ---
 
 # Figure out where it was crashing
@@ -212,6 +249,9 @@ footer: @stephaniecodes
 * Use Serial Monitor in Arduino IDE (Log statements)
 
 ![inline](serial-monitor-1.png)
+
+^Lucky for me, the microcontroller i chose supports monitoring when plugged into my computer
+^put in log statements at all diff bits of the code
 
 ---
 
@@ -221,13 +261,17 @@ footer: @stephaniecodes
 
 ![inline](serial-monitor-2.png)
 
+^very clear was crashing cuz the internet was disconnecting and reconnecting over and over again
+
 ---
 
 ## Flaky connection
 
 # <br>
 
-# 😢
+# 🤔
+
+^got me thinking...
 
 ---
 
@@ -235,6 +279,7 @@ footer: @stephaniecodes
 
 ### _but is the_ best _fit for my IoT Project?_
 
+^Made for web applications communicated over HTTP
 ^Geared for browsers, but I didn't need that extra overhead
 
 ---
@@ -250,7 +295,6 @@ footer: @stephaniecodes
 # Coding for Hardware
 
 * Resources are at a premium
-* Optimize for efficiency
 * Minimize overhead
 
 ^Not communicating between browser and server for my hardware, so that extra overhead for HTTP isn't needed.
@@ -269,16 +313,7 @@ footer: @stephaniecodes
 
 ## ✨ MQTT ✨
 
-^Not communicating between browser and server for my hardware, so that overhead isn't needed.
-
----
-
-[.build-lists: true]
-
-# What is MQTT?
-
-M2M/IoT connectivity protocol
-
+^M2M/IoT connectivity protocol
 ^Born in 1999, where needed a solution that allowed for minimal battery loss and minimal bandwidth connecting oil pipelines over satellite connection.
 
 ---
@@ -287,7 +322,10 @@ M2M/IoT connectivity protocol
 
 ![inline](mqtt-pubsub-diagram.png)
 
-^MQTT is a publish/subscribe protocol that allows edge-of-network devices to publish to a broker. Clients connect to this broker, which then mediates communication between the two devices. Each device can subscribe, or register, to particular topics. When another client publishes a message on a subscribed topic, the broker forwards the message to any client that has subscribed.
+^Consists of clients and a broker.
+^Clients connect to the broker, which then mediates communication between the two devices.
+^Each device can subscribe, or register, to particular topics.
+^When another client publishes a message on a subscribed topic, the broker forwards the message to any client that has subscribed.
 ^Space decoupling: Publisher and subscriber do not need to know each other
 ^Time decoupling: Publisher and subscriber do not need to run at the same time.
 ^Synchronization decoupling: Operations on both components are not halted during publish or receiving
