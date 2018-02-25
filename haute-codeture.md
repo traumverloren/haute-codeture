@@ -339,7 +339,13 @@ footer: @stephaniecodes
 * Transport over TCP/IP
 * 2 byte overhead
 
-^MQTT control packet headers are kept as small as possible. Each control packet has a specific purpose and every bit in the packet is carefully crafted to reduce the data transmitted over the network. Each MQTT control packet consist of three parts, a fixed header, variable header and payload. Each MQTT control packet has a 2 byte Fixed header. Not all the control packet have the variable headers and payload. A variable header contains the packet identifier if used by the control packet. A payload up to 256 MB could be attached in the packets. Having a small header overhead makes this protocol appropriate for IoT by lowering the amount of data transmitted over constrained networks.
+^MQTT control packet headers are kept as small as possible.
+^Having a small header overhead makes this protocol appropriate for IoT by lowering the amount of data transmitted over constrained networks.
+^Each control packet has a specific purpose and every bit in the packet is carefully crafted to reduce the data transmitted over the network.
+^Each MQTT control packet consist of three parts, a fixed header, variable header and payload.
+^Each MQTT control packet has a 2 byte Fixed header.
+^Not all the control packet have the variable headers and payload.
+^A payload up to 256 MB could be attached in the packets.
 
 ---
 
@@ -348,6 +354,8 @@ footer: @stephaniecodes
 # Flexible
 
 * Data agnostic payload
+
+^Send binary, jpgs, etc
 
 ---
 
@@ -359,7 +367,8 @@ footer: @stephaniecodes
 * Offline messaging
 * Retained messages
 
-^QoS: agreement between sender and receiver of a message regarding the guarantees of delivering a message (At most once, at least once, exactly once)
+^QoS: agreement between sender and receiver of a message regarding the guarantees of delivering a message
+^(At most once, at least once, exactly once)
 ^QoS is a major feature of MQTT, it makes communication in unreliable networks a lot easier because the protocol handles retransmission and guarantees the delivery of the message, regardless how unreliable the underlying transport is
 ^Hook up a DB: Persistent session means even if the client is offline all the above will be stored by the broker and are available right after the client reconnects.
 
@@ -367,9 +376,11 @@ footer: @stephaniecodes
 
 ![fit](allthethings.jpg)
 
+^So I was sold!
+
 ---
 
-# Setup Clients + a MQTT Broker
+# Setup MQTT Client + Broker
 
 ![inline](mqtt-pubsub-diagram.png)
 
@@ -381,19 +392,34 @@ footer: @stephaniecodes
 
 ---
 
+![inline 30%](MQTTjs.png)
+
+^yay can use MQTT in the browser!
+^MQTT.js is a client library for the MQTT protocol, written in JavaScript for node.js and the browser.
+
+---
+
 # MQTT.js Client
 
 ```javascript
 var mqtt = require("mqtt");
+// Create a client that connects to the broker
 var client = mqtt.connect(MQTT_BROKER_URL);
 
 function sendEvent(program) {
+  // Publish topic: "lights", payload: "rainbow"
   client.publish("lights", program);
 }
 
 var rainbowButton = document.getElementById("rainbowButton");
 rainbowButton.addEventListener("click", () => sendEvent("rainbow"));
 ```
+
+^Easy to follow
+^Only a couple lines of code to implement.
+^Include the library
+^Create a client that connects to wherever url the mqtt broker is located
+^Whenever the rainbowButton is clicked, sends the program "rainbow" to the broker
 
 ---
 
@@ -413,17 +439,27 @@ MQTTClient client;
 
 void setup() {
   WiFi.begin(SSID, PW);
+  // Connect to broker, subscribe to topic "lights"
   client.begin(MQTT_BROKER_URL, net);
-  client.onMessage(messageReceived);
-
   client.connect("necklace", KEY, TOKEN);
   client.subscribe("lights");
+
+  // Called when message received
+  client.onMessage(messageReceived);
 }
 
 void loop() {
+  // Sends/receives messages
   client.loop();
 }
 ```
+
+^Easy to follow even if you aren't familiar with coding for arduino!
+^Only a couple lines of code to implement.
+^Include the library
+^Connect client to mqtt broker thru the url
+^Subscribes to topic "lights"
+^Whenever message is received, onMessage method is called.
 
 ---
 
@@ -431,14 +467,18 @@ void loop() {
 
 ![inline](mqtt-pubsub-diagram-arrow-broker.png)
 
+^Everything going really smoothly, setting up the broker should be easy too right?
+
 ---
 
 [.build-lists: true]
 
 # MQTT Broker
 
-* Can't create my own on Heroku (ports not accessible)
+* Couldn't create my own on Heroku (ports not accessible)
 * But... not ready to move services and do devops stuff yet 😮
+
+^ Minor hiccup... but looked for a Broker as a service instead
 
 ---
 
@@ -451,13 +491,21 @@ IoT prototyping platform
 * Free
 * Easy setup
 
+^Sign up and get a key/token and ready to roll
+^Also doesn't seem to be a limitation on # of messages per min
+
 ---
 
 ![inline](mqtt-shiftr-diagram.png)
 
+^Look it's my setup
+^And it worked great!
+
 ---
 
 ![inline autoplay loop](hoorayquestionmark.mp4)
+
+^I was happy but I wasn't ecstatic.
 
 ---
 
@@ -466,12 +514,15 @@ IoT prototyping platform
 ### **not optimal**
 
 ^Too many unknowns: great for prototyping but relying on for my whole project, too risky.
+^So you can guess what I probably did next...
 
 ---
 
 # Iteration #3
 
 ### Build my own MQTT broker!
+
+^Built my own mqtt broker
 
 ---
 
@@ -482,6 +533,9 @@ IoT prototyping platform
 * Need access to port 1883
 * Heroku → Digital Ocean
 
+^Like I mentioned before, I had deployed my app on heroku but unfortunately could access the ports I needed
+^Decided to try my luck at configuring/deploying it on digital ocean since i could access ports i need there.
+
 ---
 
 # Build a MQTT Broker
@@ -489,6 +543,7 @@ IoT prototyping platform
 ![inline](mqtt-own-broker-initial.png)
 
 ^Embed MQTT Broker in Express server
+^Final configuration
 
 ---
 
@@ -497,6 +552,9 @@ IoT prototyping platform
 ![inline](aedes-github.png)
 
 [https://github.com/mcollina/aedes](https://github.com/mcollina/aedes)
+
+^To implement the MQTT broker, used this library
+^broker is embeddable in my current express server, minimal configuration change
 
 ---
 
@@ -507,7 +565,9 @@ const express = require("express");
 const app = express();
 const path = require("path");
 const aedes = require("aedes")();
+// Create MQTT server for MQTT connections
 const mqttServer = require("net").createServer(aedes.handle);
+// Create HTTP server for website requests
 const httpServer = require("http").createServer(app);
 const ws = require("websocket-stream");
 const mqttPort = 1883;
@@ -516,6 +576,7 @@ const appPort = 8080;
 mqttServer.listen(mqttPort, function() {});
 httpServer.listen(appPort, function() {});
 
+// Augment the HTTP server with MQTT-over-websocket capabilities
 ws.createServer({ server: httpServer }, aedes.handle);
 ```
 
@@ -529,6 +590,9 @@ ws.createServer({ server: httpServer }, aedes.handle);
 
 # <br><br><br><br><br><br>
 
+^Awesome!
+^I was done right?
+
 ---
 
 # Iteration #4
@@ -536,6 +600,8 @@ ws.createServer({ server: httpServer }, aedes.handle);
 #### (aka last thing I changed)
 
 ### Upgrade Microcontroller
+
+^Nope, upgrade the hardware
 
 ---
 
@@ -565,6 +631,8 @@ ws.createServer({ server: httpServer }, aedes.handle);
 ---
 
 ![loop](haute-codeture-end.mov)
+
+^Demo time!
 
 ---
 
