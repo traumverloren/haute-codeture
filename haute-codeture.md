@@ -357,6 +357,12 @@ footer: @stephaniecodes
 
 ---
 
+# MQTT
+
+A lightweight messaging protocol optimized for high-latency or unreliable networks
+
+---
+
 # Publish/subscribe
 
 ![inline](mqtt-pubsub-diagram.png)
@@ -412,9 +418,9 @@ footer: @stephaniecodes
 
 # Reliable
 
-* Quality of Service (QoS) levels<br><br>![inline 99%](qos.jpg)[^*]
+![inline 80%](qos.jpg)[^*]
 
-[^*]: Image taken from [MQTT - A practical protocol for the Internet of Things](http://www.slideshare.net/BryanBoyd/mqtt-austin-api)
+[^*]: [http://internetofthingsagenda.techtarget.com/definition/MQTT-MQ-Telemetry-Transport](http://internetofthingsagenda.techtarget.com/definition/MQTT-MQ-Telemetry-Transport)
 
 ^QoS: agreement between sender and receiver of a message regarding the guarantees of delivering a message
 
@@ -428,8 +434,7 @@ footer: @stephaniecodes
 
 # Reliable
 
-* Offline messaging
-* Retained messages
+* Persistent Session<br/><br/>![inline 100%](dbs.png)
 
 ^Hook up a DB: Persistent session means even if the client is offline all the above will be stored by the broker and are available right after the client reconnects.
 
