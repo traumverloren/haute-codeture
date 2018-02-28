@@ -434,7 +434,8 @@ A lightweight messaging protocol optimized for high-latency or unreliable networ
 
 # Reliable
 
-* Persistent Session<br/><br/>![inline 100%](dbs.png)
+* Retained Messages
+* Offline Messaging<br/>![inline 90%](dbs.png)
 
 ^Hook up a DB: Persistent session means even if the client is offline all the above will be stored by the broker and are available right after the client reconnects.
 
