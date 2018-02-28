@@ -418,7 +418,7 @@ A lightweight messaging protocol optimized for high-latency or unreliable networ
 
 # Reliable
 
-![inline 80%](qos.jpg)[^*]
+![inline 87%](qos.jpg)[^*]
 
 [^*]: [http://internetofthingsagenda.techtarget.com/definition/MQTT-MQ-Telemetry-Transport](http://internetofthingsagenda.techtarget.com/definition/MQTT-MQ-Telemetry-Transport)
 
