@@ -13,8 +13,6 @@ footer: @stephaniecodes
 
 ---
 
-[.build-lists: true]
-
 # Hi, I'm Stephanie.
 
 * Frontend Developer @ [Werkspot](https://werkspot.nl)
@@ -33,7 +31,7 @@ footer: @stephaniecodes
 
 ## I like building<br>useless (but joyful) things.
 
-^You should know, I've only been working with hardware for the past year.
+^only been working with hardware for the past year.
 
 ^And I didn't get into hardware cuz I had a project in mind to automate some part of my life or even cuz I saw something cool someone made on twitter.
 
@@ -95,7 +93,9 @@ footer: @stephaniecodes
 
 ![inline loop](react-native-demo.mp4)
 
-^I was so inspired by the exhibit, that I was inspired to tackle hardware for the first time and build my own version for pixel art.
+^I was inspired by the exhibit
+
+^ I decided to tackle a hardware project for 1st time
 
 ^Person creates a pixel art design on a web app
 
@@ -396,13 +396,7 @@ A lightweight messaging protocol optimized for high-latency or unreliable networ
 
 ^Each control packet has a specific purpose and every bit in the packet is carefully crafted to reduce the data transmitted over the network.
 
-^Each MQTT control packet consist of three parts, a fixed header, variable header and payload.
-
-^Each MQTT control packet has a 2 byte Fixed header.
-
-^Not all the control packet have the variable headers and payload.
-
-^A payload up to 256 MB could be attached in the packets.
+^It means that in comparison with many other protocols (HTTP) it almost does not load the network with the transfer of information, which is necessary only for the functioning of the protocol.
 
 ---
 
@@ -416,9 +410,19 @@ A lightweight messaging protocol optimized for high-latency or unreliable networ
 
 ---
 
+[.build-lists: true]
+
 # Reliable
 
-![inline 87%](qos.jpg)[^*]
+* Offline Messaging<br/>![inline 90%](dbs.png)
+
+^Hook up a DB: Persistent session means even if the client is offline all the above will be stored by the broker and are available right after the client reconnects.
+
+---
+
+# Reliable
+
+![inline 87%](qos.png)[^*]
 
 [^*]: [http://internetofthingsagenda.techtarget.com/definition/MQTT-MQ-Telemetry-Transport](http://internetofthingsagenda.techtarget.com/definition/MQTT-MQ-Telemetry-Transport)
 
@@ -427,17 +431,6 @@ A lightweight messaging protocol optimized for high-latency or unreliable networ
 ^(At most once, at least once, exactly once)
 
 ^QoS is a major feature of MQTT, it makes communication in unreliable networks a lot easier because the protocol handles retransmission and guarantees the delivery of the message, regardless how unreliable the underlying transport is
-
----
-
-[.build-lists: true]
-
-# Reliable
-
-* Retained Messages
-* Offline Messaging<br/>![inline 90%](dbs.png)
-
-^Hook up a DB: Persistent session means even if the client is offline all the above will be stored by the broker and are available right after the client reconnects.
 
 ---
 
@@ -745,6 +738,8 @@ ws.createServer({ server: httpServer }, aedes.handle);
 ^and it was super frustrating,
 
 ^but it all helped me learn and improve my skills.
+
+^breaking stereotypes with strangers
 
 ---
 
