@@ -177,13 +177,11 @@ footer: @stephaniecodes
 
 ---
 
-[.build-lists: true]
-
 # Project Plan:
 
 * Web app for user input
 * LEDs + microcontroller in clothing
-* Way to relay message from app to clothing
+* Relay messages from app to clothing
 
 ^Create web app for users
 
@@ -328,8 +326,6 @@ footer: @stephaniecodes
 
 ---
 
-[.build-lists: true]
-
 # Coding for Hardware
 
 * Resources are at a premium
@@ -353,13 +349,13 @@ footer: @stephaniecodes
 
 ^M2M/IoT connectivity protocol
 
-^Born in 1999, where needed a solution that allowed for minimal battery loss and minimal bandwidth connecting oil pipelines over satellite connection.
-
 ---
 
 # MQTT
 
 A lightweight messaging protocol optimized for high-latency or unreliable networks
+
+^Born in 1999, where needed a solution that allowed for minimal battery loss and minimal bandwidth connecting oil pipelines over satellite connection.
 
 ---
 
@@ -375,15 +371,13 @@ A lightweight messaging protocol optimized for high-latency or unreliable networ
 
 ^When another client publishes a message on a subscribed topic, the broker forwards the message to any client that has subscribed.
 
-^Space decoupling: Publisher and subscriber do not need to know each other
+^Publisher and subscriber do not need to know each other
 
-^Time decoupling: Publisher and subscriber do not need to run at the same time.
+^Publisher and subscriber do not need to run at the same time.
 
-^Synchronization decoupling: Operations on both components are not halted during publish or receiving
+^Operations on both components are not halted during publish or receiving
 
 ---
-
-[.build-lists: true]
 
 # Lightweight
 
@@ -400,8 +394,6 @@ A lightweight messaging protocol optimized for high-latency or unreliable networ
 
 ---
 
-[.build-lists: true]
-
 # Flexible
 
 * Data agnostic payload
@@ -409,8 +401,6 @@ A lightweight messaging protocol optimized for high-latency or unreliable networ
 ^Send binary, jpgs, etc
 
 ---
-
-[.build-lists: true]
 
 # Reliable
 
@@ -428,9 +418,19 @@ A lightweight messaging protocol optimized for high-latency or unreliable networ
 
 ^QoS: agreement between sender and receiver of a message regarding the guarantees of delivering a message
 
-^(At most once, at least once, exactly once)
-
 ^QoS is a major feature of MQTT, it makes communication in unreliable networks a lot easier because the protocol handles retransmission and guarantees the delivery of the message, regardless how unreliable the underlying transport is
+
+^3 Levels: At most once, at least once, exactly once
+
+---
+
+![inline](mqtt-table.jpg)
+
+^MQTT has pretty short specification.
+
+^ Simple verbs used to describe actions:
+
+^eg CONNECT, PUBLISH, SUBSCRIBE, UNSUBSCRIBE and DISCONNECT types that are significant for developers.
 
 ---
 
@@ -541,8 +541,6 @@ void loop() {
 
 ---
 
-[.build-lists: true]
-
 # MQTT Broker
 
 * Couldn't create my own on Heroku (ports not accessible)
@@ -551,8 +549,6 @@ void loop() {
 ^ Minor hiccup... but looked for a Broker as a service instead
 
 ---
-
-[.build-lists: true]
 
 # shiftr.io
 
@@ -599,12 +595,10 @@ IoT prototyping platform
 
 ---
 
-[.build-lists: true]
-
 # Build a MQTT Broker
 
-1. Heroku → Digital Ocean
-2. Implement Broker
+* Need access to port 1883
+* Heroku → Digital Ocean
 
 ^Like I mentioned before, I had deployed my app on heroku but unfortunately could access the ports I needed
 
