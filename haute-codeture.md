@@ -161,15 +161,15 @@ footer: @stephaniecodes
 
 ---
 
-![](haute-codeture-video.mp4)
-
-^describe video
-
----
-
 ![left](IMG_1351.JPG)
 
 # First big **Arduino** project
+
+---
+
+![](haute-codeture-video.mp4)
+
+^describe video
 
 ---
 
@@ -418,11 +418,9 @@ A lightweight messaging protocol optimized for high-latency or unreliable networ
 
 # Reliable
 
-![inline 87%](qos.png)[^*]
+![inline 102%](qos.png)[^ ]
 
-[^*]:
-
-  [http://internetofthingsagenda.techtarget.com/definition/MQTT-MQ-Telemetry-Transport](http://internetofthingsagenda.techtarget.com/definition/MQTT-MQ-Telemetry-Transport)
+[^ ]: [http://internetofthingsagenda.techtarget.com/definition/MQTT-MQ-Telemetry-Transport](http://internetofthingsagenda.techtarget.com/definition/MQTT-MQ-Telemetry-Transport)
 
 ^QoS: agreement between sender and receiver of a message regarding the guarantees of delivering a message
 
