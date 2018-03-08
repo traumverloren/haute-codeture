@@ -64,13 +64,19 @@ footer: @stephaniecodes
 
 ^ Art meant to be playful
 
-^ He made machines produce art themselves
+^ the spectator's experience was actually integrated into the overall effect of the work itself.
 
-^ Large installations meant to be triggered by a viewer
+^ Installations meant to be triggered by a viewer
 
-^ Interested in making art interactive w/ viewer
+^ To put installations such as this into movement was significant as it evoked an interactive relationship between the spectator and the object.
 
 ^ Therefore Blurring line artist/viewer
+
+^ The viewer is invited to choose a drawing tool (color, charcoal, or pencil) and place it in the special holder mounted on the assemblage.
+
+^ Paper can be seen cascading down the side of the structure, suspended from above an elevated section of the work. When put into motion, the turning wheels would activate the chosen drawing tool, moving it along a piece of paper.
+
+^ The result would be a work of art in itself. The artwork created was of a necessarily unforeseen nature, differing each and every time, and directly affected by the random movement of the asymmetrical mechanical device.
 
 ---
 
@@ -414,7 +420,9 @@ A lightweight messaging protocol optimized for high-latency or unreliable networ
 
 ![inline 87%](qos.png)[^*]
 
-[^*]: [http://internetofthingsagenda.techtarget.com/definition/MQTT-MQ-Telemetry-Transport](http://internetofthingsagenda.techtarget.com/definition/MQTT-MQ-Telemetry-Transport)
+[^*]:
+
+  [http://internetofthingsagenda.techtarget.com/definition/MQTT-MQ-Telemetry-Transport](http://internetofthingsagenda.techtarget.com/definition/MQTT-MQ-Telemetry-Transport)
 
 ^QoS: agreement between sender and receiver of a message regarding the guarantees of delivering a message
 
