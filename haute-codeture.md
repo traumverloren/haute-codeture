@@ -1,4 +1,4 @@
-theme: Poster, 7
+theme: Poster Custom
 footer: @stephaniecodes
 
 # Haute Codeture
@@ -13,11 +13,13 @@ footer: @stephaniecodes
 
 ---
 
+[.build-lists: true]
+
 # Hi, I'm Stephanie.
 
 * Frontend Developer @ [Werkspot](https://werkspot.nl)
 
-- Organizer of [Stupid Hackathon Amsterdam](http://www.stupidhackathon.wtf)<br><br><br>![inline 100%](stupid-hack.jpg)
+* Organizer of [Stupid Hackathon Amsterdam](http://www.stupidhackathon.wtf)<br><br><br>![inline 100%](stupid-hack.jpg)
 
 ^I live in Amsterdam.
 
@@ -64,24 +66,26 @@ footer: @stephaniecodes
 
 ^ Art meant to be playful
 
-^ Installations meant to be triggered by a viewer
+^ Created installations meant to be triggered by a viewer
 
-^ The viewer is invited to choose a drawing tool (color, charcoal, or pencil) and place it in the special holder mounted on the assemblage.
+^ The viewers's experience was integrated into the overall effect of the work itself
+
+^ It intentionally blurred the line between artist and viewer
+
+^ The viewer is invited to choose a drawing tool (color, charcoal, or pencil) and place it in a special holder.
 
 ^ When put into motion, the turning wheels would activate the chosen drawing tool, moving it along a piece of paper.
 
-^ The result would be a work of art in itself. The artwork created was of a necessarily unforeseen nature, differing each and every time, and directly affected by the random movement of the asymmetrical mechanical device.
+^ The result would be a work of art in itself.
 
 ^ No longer just watching a process, the viewer, by choosing an artistic instrument, plays a role in the creation of an entirely new work of art.
-
-
 
 ---
 
 > I wanted something ephemeral that would pass like a falling star...The work had to just transpire, make people dream and talk, and that would be all.
 > -- Jean Tinguely
 
-^ When I was at the exhibit, this quote stood out to me.
+^ When I was at the exhibit, this quote by Tinguely stood out to me.
 
 ^ Really liked idea of a temporary experience that connects artist and viewer
 
@@ -161,13 +165,13 @@ footer: @stephaniecodes
 
 ![left](IMG_1351.JPG)
 
-# First big **Arduino** project
+# Easy project, right?
 
----
+^ Already had a plan
 
-![](haute-codeture-video.mp4)
+^ Applying similar model as first project
 
-^describe video
+^ No surprises I thought
 
 ---
 
@@ -177,15 +181,23 @@ footer: @stephaniecodes
 
 ---
 
-## _*Building stuff is all about*_ iteration
+## Building stuff is all about _*iteration*_
 
 ---
+
+![loop](haute-codeture-video.mp4)
+
+^describe video
+
+---
+
+[.build-lists: true]
 
 # Project Plan:
 
 * Web app for user input
 * LEDs + microcontroller in clothing
-* Relay messages from app to clothing
+* Socket.IO: relay messages from app to clothing
 
 ^Create web app for users
 
@@ -228,9 +240,7 @@ footer: @stephaniecodes
 
 [.build-lists: true]
 
-# Talk to my clothes
-
-## Socket.IO
+# Socket.IO
 
 * Used it in my Raspberry Pi art project
 * Already knew that it works
@@ -242,7 +252,7 @@ footer: @stephaniecodes
 
 ---
 
-![fit](led-couture-schema-socketio-heroku.png)
+![130%](led-couture-schema-socketio-heroku.png)
 
 ---
 
@@ -314,9 +324,9 @@ footer: @stephaniecodes
 
 ---
 
-### _Socket.IO is_ great _for the web!_
+### Socket.IO is _great_ for the web!
 
-### _but is the_ best _fit for my IoT Project?_
+### but is the _best_ fit for my IoT Project?
 
 ^Made for web applications communicated over HTTP
 
@@ -418,7 +428,9 @@ A lightweight messaging protocol optimized for high-latency or unreliable networ
 
 ![inline 102%](qos.png)[^ ]
 
-[^ ]: [http://internetofthingsagenda.techtarget.com/definition/MQTT-MQ-Telemetry-Transport](http://internetofthingsagenda.techtarget.com/definition/MQTT-MQ-Telemetry-Transport)
+[^ ]:
+
+  [http://internetofthingsagenda.techtarget.com/definition/MQTT-MQ-Telemetry-Transport](http://internetofthingsagenda.techtarget.com/definition/MQTT-MQ-Telemetry-Transport)
 
 ^QoS: agreement between sender and receiver of a message regarding the guarantees of delivering a message
 
@@ -444,7 +456,7 @@ A lightweight messaging protocol optimized for high-latency or unreliable networ
 
 ---
 
-# Setup MQTT Client + Broker
+# Setup MQTT Clients + Broker
 
 ![inline](mqtt-pubsub-diagram.png)
 
@@ -503,23 +515,19 @@ rainbowButton.addEventListener("click", () => sendEvent("rainbow"));
 ```c
 #include <MQTTClient.h>
 
-WiFiClient net;
-MQTTClient client;
-
 void setup() {
   WiFi.begin(SSID, PW);
   // Connect to broker, subscribe to topic "lights"
-  client.begin(MQTT_BROKER_URL, net);
-  client.connect("necklace", KEY, TOKEN);
-  client.subscribe("lights");
-
+  MQTTClient.begin(MQTT_BROKER_URL, WiFiClient);
+  MQTTClient.connect("necklace", KEY, TOKEN);
+  MQTTClient.subscribe("lights");
   // Called when message received
-  client.onMessage(messageReceived);
+  MQTTClient.onMessage(messageReceived);
 }
 
 void loop() {
   // Sends/receives messages
-  client.loop();
+  MQTTClient.loop();
 }
 ```
 
@@ -668,17 +676,17 @@ ws.createServer({ server: httpServer }, aedes.handle);
 
 ![](ballmer.gif)
 
----
-
-# Iteration #4
-
-# <br><br><br><br><br><br>
-
 ^Awesome!
 
 ^I conquered my devops fears and it worked!
 
 ^I was done right?
+
+---
+
+# Iteration #4
+
+# <br><br><br><br><br><br>
 
 ---
 
@@ -703,7 +711,13 @@ ws.createServer({ server: httpServer }, aedes.handle);
 * High speed, reliable Wifi 🤩
 * 2X cost of Feather Huzzah
 
-^Doesn't have to yield to wifi core, steady wifi throughput
+^ Low power management
+
+^ Separate Wifi module
+
+^ So doesn't have to yield to wifi core, steady wifi throughput
+
+^ 2X cost of Feather Huzzah
 
 ---
 
@@ -727,11 +741,9 @@ ws.createServer({ server: httpServer }, aedes.handle);
 
 ^It can take many iterations to get something right
 
-^Or where you want it to be and that's ok.
-
 ^I messed a bunch during this with trying to figure out devops
 
-^and doing sloppy soldering,
+^and sloppy soldering,
 
 ^and it was super frustrating,
 
