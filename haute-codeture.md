@@ -33,7 +33,7 @@ footer: @stephaniecodes
 
 ^only been working with hardware for the past year.
 
-^And I didn't get into hardware cuz I had a project in mind to automate some part of my life or even cuz I saw something cool someone made on twitter.
+^And I didn't get into hardware cuz I had a project in mind to automate some part of my life.
 
 ---
 
@@ -64,19 +64,17 @@ footer: @stephaniecodes
 
 ^ Art meant to be playful
 
-^ the spectator's experience was actually integrated into the overall effect of the work itself.
-
 ^ Installations meant to be triggered by a viewer
-
-^ To put installations such as this into movement was significant as it evoked an interactive relationship between the spectator and the object.
-
-^ Therefore Blurring line artist/viewer
 
 ^ The viewer is invited to choose a drawing tool (color, charcoal, or pencil) and place it in the special holder mounted on the assemblage.
 
-^ Paper can be seen cascading down the side of the structure, suspended from above an elevated section of the work. When put into motion, the turning wheels would activate the chosen drawing tool, moving it along a piece of paper.
+^ When put into motion, the turning wheels would activate the chosen drawing tool, moving it along a piece of paper.
 
 ^ The result would be a work of art in itself. The artwork created was of a necessarily unforeseen nature, differing each and every time, and directly affected by the random movement of the asymmetrical mechanical device.
+
+^ No longer just watching a process, the viewer, by choosing an artistic instrument, plays a role in the creation of an entirely new work of art.
+
+
 
 ---
 
