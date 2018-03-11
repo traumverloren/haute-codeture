@@ -13,8 +13,6 @@ footer: @stephaniecodes
 
 ---
 
-[.build-lists: true]
-
 # Hi, I'm Stephanie.
 
 * Frontend Developer @ [Werkspot](https://werkspot.nl)
@@ -31,7 +29,13 @@ footer: @stephaniecodes
 
 ---
 
-## I like building<br>useless (but joyful) things.
+## I like to build fun things.
+
+![inline](wilburparty.gif)
+
+---
+
+## I'm a hardware newbie.
 
 ^only been working with hardware for the past year.
 
@@ -85,25 +89,29 @@ footer: @stephaniecodes
 > I wanted something ephemeral that would pass like a falling star...The work had to just transpire, make people dream and talk, and that would be all.
 > -- Jean Tinguely
 
-^ When I was at the exhibit, this quote by Tinguely stood out to me.
+^I was inspired by the exhibit
+
+^ this quote by Tinguely stood out to me.
 
 ^ Really liked idea of a temporary experience that connects artist and viewer
 
 ^ It's spontaneous and,
 
-^ Only meant to bring joy
+^ Only meant to bring joy and inspire for short time
 
-^ Inspire for short time
+^ I was excited by all these ideas
+
+^ and decided to tackle a hardware project for 1st time
+
+^ wanted to make something where a user anywhere in the world could create some kind of art in app
+
+^ and send it to me to enjoy for a small amount of time.
 
 ---
 
 # My first project
 
 ![inline loop](react-native-demo.mp4)
-
-^I was inspired by the exhibit
-
-^ I decided to tackle a hardware project for 1st time
 
 ^Person creates a pixel art design on a web app
 
@@ -117,13 +125,13 @@ footer: @stephaniecodes
 
 ![inline](rpi-pixel-diagram.png)
 
-^React app, socketio server, rpi
-
 ^Users create pixel art designs on the react web app
 
-^Sent to the socketio server deployed on heroku
-
 ^then sent to raspberry pi and shows up on my pi in my living room!
+
+^Communication is handled through Socketio
+
+^event-based messaging library that works in all browsers/devices
 
 ---
 
@@ -132,6 +140,8 @@ footer: @stephaniecodes
 🎨 [light-art.herokuapp.com](https://light-art.herokuapp.com)
 
 📹 [goo.gl/mK5afh](https://www.youtube.com/watch?v=eud6LnzVISM)
+
+<br>![100%](qr_code.png)
 
 ^I gave my first conf talk last year about this project.
 
@@ -153,7 +163,7 @@ footer: @stephaniecodes
 
 ---
 
-![fit](led-couture-schema2.png)
+<!-- ![fit](led-couture-schema2.png)
 
 ^User picks a program
 
@@ -161,11 +171,32 @@ footer: @stephaniecodes
 
 ^that sends it to arduino and leds in my clothing
 
+--- -->
+
+![loop autoplay left](IMG_2280.mov)
+![right](rainbow_leds.jpg)
+
 ---
 
-![left](IMG_1351.JPG)
+[.build-lists: true]
 
-# Easy project, right?
+# Project Plan:
+
+* Web app for user input
+* LEDs + microcontroller in clothing
+* Socket.IO: relay messages from app to clothing
+
+^Create web app for users
+
+^Integrate LEDS and microcontroller into clothing pieces
+
+^and a way to send programs from web to clothing
+
+---
+
+<!-- ![left](IMG_1351.JPG) -->
+
+## Easy, right?
 
 ^ Already had a plan
 
@@ -185,27 +216,11 @@ footer: @stephaniecodes
 
 ---
 
-![loop](haute-codeture-video.mp4)
+<!-- ![loop](haute-codeture-video.mp4)
 
 ^describe video
 
----
-
-[.build-lists: true]
-
-# Project Plan:
-
-* Web app for user input
-* LEDs + microcontroller in clothing
-* Socket.IO: relay messages from app to clothing
-
-^Create web app for users
-
-^Integrate LEDS and microcontroller into clothing pieces
-
-^and a way to send programs from web to clothing
-
----
+--- -->
 
 [.build-lists: true]
 
@@ -258,7 +273,19 @@ footer: @stephaniecodes
 
 # Build process
 
-![inline fill](iteration-1-build.jpg)![inline fill](iteration-1-build-skirt.jpg)
+![inline left](umbrella_wiring.png)![inline right](wiring_necklace.png)
+
+---
+
+# Build process
+
+![inline fill](leds_strip-wire-solder.gif)
+
+---
+
+# Build process
+
+![inline fill left](IMG_1349.jpg)![inline fill right](build_process_2.jpg)
 
 ^So, the build process:
 
