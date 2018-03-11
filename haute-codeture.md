@@ -29,7 +29,7 @@ footer: @stephaniecodes
 
 ---
 
-## I like to build fun things.
+## I like to build fun things with LEDs.
 
 ![inline](wilburparty.gif)
 
@@ -133,6 +133,8 @@ footer: @stephaniecodes
 
 ^event-based messaging library that works in all browsers/devices
 
+^It was a lot of work and I learned so much from it, especially about how to tackle a humongus project that seems insurmountable when you start.
+
 ---
 
 # Creating art with a raspberry pi
@@ -145,7 +147,7 @@ footer: @stephaniecodes
 
 ^I gave my first conf talk last year about this project.
 
-^You can check out the project or video.
+^ Definitely check out the video from Codeland Conf.
 
 ^Really inspired by the reaction to my pixel art project
 
@@ -161,24 +163,32 @@ footer: @stephaniecodes
 
 ^Taking this same idea and transferring it to my clothing
 
+^Really interested in interactions that might occur when people realize it's interactive.
+
 ---
 
-<!-- ![fit](led-couture-schema2.png)
+![loop autoplay](intro-clip.mov)
 
-^User picks a program
+^ I wanted to make a complete, cohesive look that was completely interactive via an app.
 
-^Send that info to a server
+---
 
-^that sends it to arduino and leds in my clothing
+# Project Plan:
 
---- -->
+* Web app for user input
 
-![loop autoplay left](IMG_2280.mov)
+![right loop autoplay](IMG_2280.mov)
+
+---
+
+# Project Plan:
+
+* Web app for user input
+* LEDs + microcontroller in clothing
+
 ![right](rainbow_leds.jpg)
 
 ---
-
-[.build-lists: true]
 
 # Project Plan:
 
@@ -186,15 +196,15 @@ footer: @stephaniecodes
 * LEDs + microcontroller in clothing
 * Socket.IO: relay messages from app to clothing
 
-^Create web app for users
+^ Used it in my Raspberry Pi art project
 
-^Integrate LEDS and microcontroller into clothing pieces
+^ Already knew that it works
 
-^and a way to send programs from web to clothing
+^ Easy setup: node.js server & client libraries
+
+![right fit](led-couture-schema-socketio.png)
 
 ---
-
-<!-- ![left](IMG_1351.JPG) -->
 
 ## Easy, right?
 
@@ -216,11 +226,11 @@ footer: @stephaniecodes
 
 ---
 
-<!-- ![loop](haute-codeture-video.mp4)
+# Iteration #1
 
-^describe video
+### The starting point
 
---- -->
+---
 
 [.build-lists: true]
 
@@ -253,6 +263,7 @@ footer: @stephaniecodes
 
 ---
 
+<!-- 
 [.build-lists: true]
 
 # Socket.IO
@@ -260,6 +271,8 @@ footer: @stephaniecodes
 * Used it in my Raspberry Pi art project
 * Already knew that it works
 * Easy setup: node.js server & client libraries
+
+^Socket.IO is a JavaScript library for realtime web applications. It enables realtime, bi-directional communication between web clients and servers.
 
 ^I knew it worked well for my rpi pixel art
 
@@ -269,21 +282,19 @@ footer: @stephaniecodes
 
 ![130%](led-couture-schema-socketio-heroku.png)
 
----
+--- -->
 
-# Build process
-
-![inline left](umbrella_wiring.png)![inline right](wiring_necklace.png)
+# Building Phase
 
 ---
 
-# Build process
-
-![inline fill](leds_strip-wire-solder.gif)
+![100%](wiring-diagrams.png)
 
 ---
 
-# Build process
+![](leds_strip-wire-solder.gif)
+
+---
 
 ![inline fill left](IMG_1349.jpg)![inline fill right](build_process_2.jpg)
 
