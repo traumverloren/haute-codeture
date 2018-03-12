@@ -125,15 +125,13 @@ footer: @stephaniecodes
 
 ![inline](rpi-pixel-diagram.png)
 
-^Users create pixel art designs on the react web app
-
-^then sent to raspberry pi and shows up on my pi in my living room!
-
-^Communication is handled through Socketio
+^Communication between the app and rpi is handled through socketio
 
 ^event-based messaging library that works in all browsers/devices
 
-^It was a lot of work and I learned so much from it, especially about how to tackle a humongus project that seems insurmountable when you start.
+^ i created a socketio server to relay the msgs
+
+^ it was challenging to take on this project and figure out how to get it all to work together.
 
 ---
 
@@ -145,7 +143,9 @@ footer: @stephaniecodes
 
 <br>![100%](qr_code.png)
 
-^I gave my first conf talk last year about this project.
+^ But I want to tell about my next big hardware project after this one.
+
+^I actually gave my first conf talk last year about this project.
 
 ^ Definitely check out the video from Codeland Conf.
 
@@ -179,6 +179,8 @@ footer: @stephaniecodes
 
 ![right loop autoplay](IMG_2280.mov)
 
+^ Create a web app for user input
+
 ---
 
 # Project Plan:
@@ -188,6 +190,8 @@ footer: @stephaniecodes
 
 ![right](rainbow_leds.jpg)
 
+^ Integrate LEDs & microcontrollers in diff pcs of clothing
+
 ---
 
 # Project Plan:
@@ -195,6 +199,8 @@ footer: @stephaniecodes
 * Web app for user input
 * LEDs + microcontroller in clothing
 * Socket.IO: relay messages from app to clothing
+
+^ Of course, I'll use SocketIO again
 
 ^ Used it in my Raspberry Pi art project
 
@@ -208,11 +214,13 @@ footer: @stephaniecodes
 
 ## Easy, right?
 
-^ Already had a plan
+^ I had a plan
 
-^ Applying similar model as first project
+^ Applying all the things I learned and worked in my first project
 
-^ No surprises I thought
+^ No surprises
+
+^ Everything is gonna go really smoothly
 
 ---
 
@@ -220,9 +228,23 @@ footer: @stephaniecodes
 
 # Faced lots of challenges
 
+^ Lots of wiring and soldering
+
+^ Though I had learned a lot from my first project
+
+^ There was new difficulties I faced during this project
+
 ---
 
 ## Building stuff is all about _*iteration*_
+
+^ I had setbacks that made me unsure of my abilities
+
+^ I felt frustrated and that i was terrible maker and never going to get better at this stuff.
+
+^ but most importantly, I tried to learn from every setback I had
+
+^ And continually improve my project.
 
 ---
 
@@ -230,22 +252,27 @@ footer: @stephaniecodes
 
 ### The starting point
 
+^ So let's start at the beginning
+
 ---
 
 [.build-lists: true]
 
 # Hardware
 
-* Beginner friendly
 * Small footprint
 * Durability
 * Wifi connectivity
 
+^ Since I knew I was going to build a small web app and use SocketIO before, I didn't have to think much about that part of the project
+
+^ Main focus was on hardware
+
+^ Needed to figure out what all I was going to use to control the LEDs in my clothing
+
 ^Must be as discrete/small as possible in my clothing
 
 ---
-
-[.build-lists: true]
 
 ![left 80%](huzzah.jpg)
 
@@ -263,32 +290,19 @@ footer: @stephaniecodes
 
 ---
 
-<!-- 
-[.build-lists: true]
-
-# Socket.IO
-
-* Used it in my Raspberry Pi art project
-* Already knew that it works
-* Easy setup: node.js server & client libraries
-
-^Socket.IO is a JavaScript library for realtime web applications. It enables realtime, bi-directional communication between web clients and servers.
-
-^I knew it worked well for my rpi pixel art
-
-^Communicate from web app to several pieces of hardware at once
-
----
-
-![130%](led-couture-schema-socketio-heroku.png)
-
---- -->
-
 # Building Phase
 
 ---
 
 ![100%](wiring-diagrams.png)
+
+^ Since I was building 3 separate pieces,
+
+^ It would be the most wiring and soldering i had ever done before
+
+^ Making wiring diagrams BEFORE i attempted anything with the hardware
+
+^ Saved me so much grief - kept me from getting confused in the middle of the build.
 
 ---
 
