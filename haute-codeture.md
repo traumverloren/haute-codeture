@@ -145,9 +145,11 @@ footer: @stephaniecodes
 
 ^ But I want to tell about my next big hardware project after this one.
 
-^I actually gave my first conf talk last year about this project.
+^ And send me some pixel art in a few days when I'm back home.
 
-^ Definitely check out the video from Codeland Conf.
+^I gave my first conf talk last year about this project.
+
+^ If interested, Definitely check out the video from Codeland Conf.
 
 ^Really inspired by the reaction to my pixel art project
 
@@ -306,11 +308,8 @@ footer: @stephaniecodes
 
 ---
 
-![](leds_strip-wire-solder.gif)
-
----
-
-![inline fill left](IMG_1349.jpg)![inline fill right](build_process_2.jpg)
+![inline fill](leds_strip-wire-solder.gif)![inline fill](IMG_1337.jpg)
+![inline fill](IMG_1349.jpg)![inline fill](build_process_2.jpg)
 
 ^So, the build process:
 
