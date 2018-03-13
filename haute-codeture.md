@@ -21,7 +21,7 @@ footer: @stephaniecodes
 
 ^I live in Amsterdam.
 
-^Dev for a total 3 years, last yr as a frontend/js dev
+^Been dev for 3 years, last yr as a frontend/js dev
 
 ^Frontend dev @ werkspot
 
@@ -420,7 +420,9 @@ footer: @stephaniecodes
 
 A lightweight messaging protocol optimized for high-latency or unreliable networks
 
-^Born in 1999, where needed a solution that allowed for minimal battery loss and minimal bandwidth connecting oil pipelines over satellite connection.
+^Invented in 1999
+
+^Need a solution that allowed for minimal battery loss and minimal bandwidth connecting sensors over satellite connection.
 
 ---
 
@@ -428,11 +430,13 @@ A lightweight messaging protocol optimized for high-latency or unreliable networ
 
 ![inline](mqtt-pubsub-diagram.png)
 
-^Consists of clients and a broker.
+^Publish Subscribe Architecture
+
+^clients and a broker.
 
 ^Clients connect to the broker, which then mediates communication between the two devices.
 
-^Each device can subscribe, or register, to particular topics.
+^Each device can subscribe to particular topics.
 
 ^When another client publishes a message on a subscribed topic, the broker forwards the message to any client that has subscribed.
 
@@ -471,7 +475,11 @@ A lightweight messaging protocol optimized for high-latency or unreliable networ
 
 * Offline Messaging<br/>![inline 90%](dbs.png)
 
-^Hook up a DB: Persistent session means even if the client is offline all the above will be stored by the broker and are available right after the client reconnects.
+^ Hook up a DB
+
+^ Even if the client is offline
+
+^ Messages stored by the broker and are available right after the client reconnects.
 
 ---
 
@@ -482,6 +490,8 @@ A lightweight messaging protocol optimized for high-latency or unreliable networ
 [^ ]:
 
   [http://internetofthingsagenda.techtarget.com/definition/MQTT-MQ-Telemetry-Transport](http://internetofthingsagenda.techtarget.com/definition/MQTT-MQ-Telemetry-Transport)
+
+^Quality of Service
 
 ^QoS: agreement between sender and receiver of a message regarding the guarantees of delivering a message
 
