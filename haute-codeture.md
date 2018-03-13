@@ -258,6 +258,10 @@ footer: @stephaniecodes
 
 ---
 
+![inline](led-couture-schema-socketio-heroku.png)
+
+---
+
 [.build-lists: true]
 
 # Hardware
@@ -361,7 +365,7 @@ footer: @stephaniecodes
 
 ![inline](serial-monitor-2.png)
 
-^very clear was crashing cuz the internet was disconnecting and reconnecting over and over again
+^very clear was crashing cuz the wifi was disconnecting and reconnecting over and over again
 
 ---
 
@@ -457,7 +461,7 @@ A lightweight messaging protocol optimized for high-latency or unreliable networ
 
 ^Having a small header overhead makes this protocol appropriate for IoT by lowering the amount of data transmitted over constrained networks.
 
-^Each control packet has a specific purpose and every bit in the packet is carefully crafted to reduce the data transmitted over the network.
+^Every bit in the packet is carefully crafted to reduce the data transmitted over the network.
 
 ^It means that in comparison with many other protocols (HTTP) it almost does not load the network with the transfer of information, which is necessary only for the functioning of the protocol.
 
@@ -496,8 +500,6 @@ A lightweight messaging protocol optimized for high-latency or unreliable networ
 ^QoS: agreement between sender and receiver of a message regarding the guarantees of delivering a message
 
 ^QoS is a major feature of MQTT, it makes communication in unreliable networks a lot easier because the protocol handles retransmission and guarantees the delivery of the message, regardless how unreliable the underlying transport is
-
-^3 Levels: At most once, at least once, exactly once
 
 ---
 
@@ -608,9 +610,21 @@ void loop() {
 
 # Setup MQTT Broker
 
-![inline](mqtt-pubsub-diagram-arrow-broker.png)
+![inline](mqtt-own-broker-plan-heroku-arrow.png)
 
 ^Everything going really smoothly, setting up the broker should be easy too right?
+
+---
+
+# Setup MQTT Broker
+
+![inline](mqtt-own-broker-plan-heroku.png)
+
+---
+
+# Setup MQTT Broker
+
+![inline](mqtt-own-broker-plan-heroku-no.png)
 
 ---
 
@@ -620,6 +634,12 @@ void loop() {
 * But... not ready to move services and do devops stuff yet 😮
 
 ^ Minor hiccup... but looked for a Broker as a service instead
+
+---
+
+# Setup MQTT Broker
+
+![inline](mqtt-own-broker-plan-heroku-ext.png)
 
 ---
 
