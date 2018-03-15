@@ -76,13 +76,13 @@ footer: @stephaniecodes
 
 ^ It intentionally blurred the line between artist and viewer
 
-^ The viewer is invited to choose a drawing tool (color, charcoal, or pencil) and place it in a special holder.
+^ The viewer is invited to choose a drawing tool (marker, pen, or pencil) and place it in a holder.
 
-^ When put into motion, the turning wheels would activate the chosen drawing tool, moving it along a piece of paper.
+^ When put into motion, it moves it along a piece of paper.
 
 ^ The result would be a work of art in itself.
 
-^ No longer just watching a process, the viewer, by choosing an artistic instrument, plays a role in the creation of an entirely new work of art.
+^ No longer just watching a process, the viewer, by choosing the drawing tool, plays a role in the creation of an entirely new work of art.
 
 ---
 
@@ -93,7 +93,7 @@ footer: @stephaniecodes
 
 ^ this quote by Tinguely stood out to me.
 
-^ Really liked idea of a temporary experience that connects artist and viewer
+^ Really liked idea of art as a temporary experience that connects an artist and viewer
 
 ^ It's spontaneous and,
 
@@ -101,11 +101,11 @@ footer: @stephaniecodes
 
 ^ I was excited by all these ideas
 
-^ and decided to tackle a hardware project for 1st time
+^ and wanted to use my skillset as a developer
 
-^ wanted to make something where a user anywhere in the world could create some kind of art in app
+^ to make something where a user anywhere in the world could create some kind of art in app
 
-^ and send it to me to enjoy for a small amount of time.
+^ and send it back to me as the artist to enjoy for a small amount of time.
 
 ---
 
@@ -188,7 +188,7 @@ footer: @stephaniecodes
 # Project Plan:
 
 * Web app for user input
-* LEDs + microcontroller in clothing
+* LEDs + hardware in clothing
 
 ![right](rainbow_leds.jpg)
 
@@ -196,11 +196,11 @@ footer: @stephaniecodes
 
 ---
 
-# Project Plan:
+# Project Plan
 
 * Web app for user input
-* LEDs + microcontroller in clothing
-* Socket.IO: relay messages from app to clothing
+* LEDs + hardware in clothing
+* Socket.IO: send messages from app to clothing
 
 ^ Of course, I'll use SocketIO again
 
@@ -210,7 +210,7 @@ footer: @stephaniecodes
 
 ^ Easy setup: node.js server & client libraries
 
-![right fit](led-couture-schema-socketio.png)
+![right 83%](led-couture-schema-socketio.png)
 
 ---
 
@@ -219,8 +219,6 @@ footer: @stephaniecodes
 ^ I had a plan
 
 ^ Applying all the things I learned and worked in my first project
-
-^ No surprises
 
 ^ Everything is gonna go really smoothly
 
@@ -260,6 +258,18 @@ footer: @stephaniecodes
 
 ![inline](led-couture-schema-socketio-heroku.png)
 
+^ Since I was going to build a small web app and use SocketIO before, I didn't have to think much about that part of the project
+
+^ Create a simple web app where users choose a color and program for my clothing
+
+^ Create a socketio server to relay the messages from the app to the hardware
+
+^ Deploy both on a simple express server on Heroku.
+
+^ Main focus was on hardware
+
+^ Most of my focus was on figuring out the hardware bit.
+
 ---
 
 [.build-lists: true]
@@ -270,13 +280,13 @@ footer: @stephaniecodes
 * Durability
 * Wifi connectivity
 
-^ Since I knew I was going to build a small web app and use SocketIO before, I didn't have to think much about that part of the project
-
-^ Main focus was on hardware
-
 ^ Needed to figure out what all I was going to use to control the LEDs in my clothing
 
 ^Must be as discrete/small as possible in my clothing
+
+^ Durable - taking off/on
+
+^ Needed wifi to receive messages from the app.
 
 ---
 
@@ -284,11 +294,20 @@ footer: @stephaniecodes
 
 # Adafruit Feather Huzzah ESP8266
 
+* Arduino
 * Small
 * Wifi built-in
 * Lots of info/tutorials
 
-^I chose this arduino.
+^I chose an arduino.
+
+^ Arduino is a great choice for a project like this
+
+^ cuz i just needed it to run the light programs
+
+^ and listen for new messages from the app and change programs.
+
+^ Adafruit Feather Huzzah
 
 ^it's small, has built-in wifi
 
@@ -326,6 +345,10 @@ footer: @stephaniecodes
 ![inline loop](bike-ride.mp4)
 
 ^So excited to take it out in public!
+
+^ But as you can see in the video
+
+^ My skirt crashes and reboots to a diff program
 
 ^But super FAIL
 
@@ -402,6 +425,8 @@ footer: @stephaniecodes
 
 ^Not communicating between browser and server for my hardware, so that extra overhead for HTTP isn't needed.
 
+^ I needed the most bare minimum (but easy to implement and understand) messaging library possible.
+
 ---
 
 ## What else can I use?
@@ -422,7 +447,7 @@ footer: @stephaniecodes
 
 # MQTT
 
-A lightweight messaging protocol optimized for high-latency or unreliable networks
+A lightweight messaging protocol<br/>optimized for high-latency or unreliable networks
 
 ^Invented in 1999
 
@@ -491,9 +516,7 @@ A lightweight messaging protocol optimized for high-latency or unreliable networ
 
 ![inline 102%](qos.png)[^ ]
 
-[^ ]:
-
-  [http://internetofthingsagenda.techtarget.com/definition/MQTT-MQ-Telemetry-Transport](http://internetofthingsagenda.techtarget.com/definition/MQTT-MQ-Telemetry-Transport)
+[^ ]:[http://internetofthingsagenda.techtarget.com/definition/MQTT-MQ-Telemetry-Transport](http://internetofthingsagenda.techtarget.com/definition/MQTT-MQ-Telemetry-Transport)
 
 ^Quality of Service
 
@@ -505,7 +528,7 @@ A lightweight messaging protocol optimized for high-latency or unreliable networ
 
 ![inline](mqtt-table.jpg)
 
-^MQTT has pretty short specification.
+^MQTT has short and readable specification.
 
 ^ Simple verbs used to describe actions:
 
@@ -522,6 +545,8 @@ A lightweight messaging protocol optimized for high-latency or unreliable networ
 # Setup MQTT Clients + Broker
 
 ![inline](mqtt-pubsub-diagram.png)
+
+^ Needed to rework my app, hardware, and server setup and change it to use to use MQTT instead of socketio.
 
 ---
 
