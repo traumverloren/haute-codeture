@@ -258,7 +258,7 @@ footer: @stephaniecodes
 
 ![inline](led-couture-schema-socketio-heroku.png)
 
-^ Since I was going to build a small web app and use SocketIO before, I didn't have to think much about that part of the project
+^ Since I was going to build a small web app like before, I didn't have to think much about that part of the project
 
 ^ Create a simple web app where users choose a color and program for my clothing
 
@@ -588,7 +588,7 @@ rainbowButton.addEventListener("click", () => sendEvent("rainbow"));
 
 ^Create a client that connects to wherever url the mqtt broker is located
 
-^Whenever the rainbowButton is clicked, sends the program "rainbow" to the broker
+^Whenever the rainbowButton is clicked, sends a message to the broker with topic "lights" with the payload being the string "rainbow"
 
 ---
 
