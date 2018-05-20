@@ -1,31 +1,15 @@
 theme: Poster Custom
 footer: @stephaniecodes
 
-# Haute Codeture
+## Haute Codeture
 
-# <br><br><br><br>
+## <br/><br/>
 
 ### Stephanie Nemeth
 
-#### @stephaniecodes
+#### @stephaniecodes ✨ stephanie.lol
 
 [.hide-footer]
-
----
-
-# Hi, I'm Stephanie.
-
-* Frontend Developer @ [Werkspot](https://werkspot.nl)
-
-* Organizer of [Stupid Hackathon Amsterdam](http://www.stupidhackathon.wtf)<br><br><br>![inline 100%](stupid-hack.jpg)
-
-^I live in Amsterdam.
-
-^Been dev for 3 years, last yr as a frontend/js dev
-
-^Frontend dev @ werkspot
-
-^Organizer of Stupid Hackathon Amsterdam
 
 ---
 
@@ -89,9 +73,7 @@ footer: @stephaniecodes
 > I wanted something ephemeral that would pass like a falling star...The work had to just transpire, make people dream and talk, and that would be all.
 > -- Jean Tinguely
 
-^I was inspired by the exhibit
-
-^ this quote by Tinguely stood out to me.
+^ At the exhibit, this quote by Tinguely stood out to me.
 
 ^ Really liked idea of art as a temporary experience that connects an artist and viewer
 
@@ -99,61 +81,15 @@ footer: @stephaniecodes
 
 ^ Only meant to bring joy and inspire for short time
 
+---
+
+# ![](blue-hair-emoji.png) + ![](computer.png) = ![](art.png)
+
 ^ I was excited by all these ideas
 
 ^ and wanted to use my skillset as a developer
 
-^ to make something where a user anywhere in the world could create some kind of art in app
-
-^ and send it back to me as the artist to enjoy for a small amount of time.
-
----
-
-# My first project
-
-![inline loop](react-native-demo.mp4)
-
-^Person creates a pixel art design on a web app
-
-^Sends it to my raspberry pi
-
-^Shows up on my rpi in my living room
-
----
-
-# My first project
-
-![inline](rpi-pixel-diagram.png)
-
-^Communication between the app and rpi is handled through socketio
-
-^event-based messaging library that works in all browsers/devices
-
-^ i created a socketio server to relay the msgs
-
-^ it was challenging to take on this project and figure out how to get it all to work together.
-
----
-
-# Creating art with a raspberry pi
-
-🎨 [light-art.herokuapp.com](https://light-art.herokuapp.com)
-
-📹 [goo.gl/mK5afh](https://www.youtube.com/watch?v=eud6LnzVISM)
-
-<br>![100%](qr_code.png)
-
-^ But I want to tell about my next big hardware project after this one.
-
-^ And send me some pixel art in a few days when I'm back home.
-
-^I gave my first conf talk last year about this project.
-
-^ If interested, Definitely check out the video from Codeland Conf.
-
-^Really inspired by the reaction to my pixel art project
-
-^Started thinking how I can take the experience out of my living room.
+^ and make my own interactive art experience
 
 ---
 
@@ -161,9 +97,11 @@ footer: @stephaniecodes
 
 ## I made my clothing
 
-## the canvas?
+## interactive?
 
-^Taking this same idea and transferring it to my clothing
+^ I didn't have a studio space to create an installation like Tinguely.
+
+^ Apply same idea of interactivity to the most accessible form of expression I could think of - my clothing.
 
 ^Really interested in interactions that might occur when people realize it's interactive.
 
@@ -200,13 +138,17 @@ footer: @stephaniecodes
 
 * Web app for user input
 * LEDs + hardware in clothing
-* Socket.IO: send messages from app to clothing
+* Send messages from app to clothing: <br/>Socket.IO
 
-^ Of course, I'll use SocketIO again
+^ Communication between the app and clothing is handled through socketio
 
-^ Used it in my Raspberry Pi art project
+^ One of my favorite libraries as a dev
 
-^ Already knew that it works
+^ Event-based messaging library that works in all browsers/devices
+
+^ integrate socketio client libraries into app and clothing
+
+^ create a socketio server to relay the msgs
 
 ^ Easy setup: node.js server & client libraries
 
@@ -218,8 +160,6 @@ footer: @stephaniecodes
 
 ^ I had a plan
 
-^ Applying all the things I learned and worked in my first project
-
 ^ Everything is gonna go really smoothly
 
 ---
@@ -230,9 +170,7 @@ footer: @stephaniecodes
 
 ^ Lots of wiring and soldering
 
-^ Though I had learned a lot from my first project
-
-^ There was new difficulties I faced during this project
+^ Most ambitious hardware project so far
 
 ---
 
@@ -258,13 +196,13 @@ footer: @stephaniecodes
 
 ![inline](led-couture-schema-socketio-heroku.png)
 
-^ Since I was going to build a small web app like before, I didn't have to think much about that part of the project
-
 ^ Create a simple web app where users choose a color and program for my clothing
 
 ^ Create a socketio server to relay the messages from the app to the hardware
 
-^ Deploy both on a simple express server on Heroku.
+^ Deploy it all on a simple express server on Heroku.
+
+^ I didn't have to think much about the software side of the project
 
 ^ Main focus was on hardware
 
@@ -337,6 +275,10 @@ footer: @stephaniecodes
 ^So, the build process:
 
 ^Basically me sitting on the floor in my living room of my tiny amsterdam apartment, and constructing each piece, testing, and fixing soldering mistakes lol
+
+---
+
+![fit](cards.jpg)
 
 ---
 
@@ -463,11 +405,11 @@ A lightweight messaging protocol<br/>optimized for high-latency or unreliable ne
 
 ^clients and a broker.
 
-^Clients connect to the broker, which then mediates communication between the two devices.
+^Clients connect to the broker, which then mediates communication between the devices.
 
-^Each device can subscribe to particular topics.
+^When a device connect,s it can subscribe to topics.
 
-^When another client publishes a message on a subscribed topic, the broker forwards the message to any client that has subscribed.
+^Then, when another client publishes a message on a subscribed topic, the broker forwards the message to any client that has subscribed to it.
 
 ^Publisher and subscriber do not need to know each other
 
@@ -484,11 +426,11 @@ A lightweight messaging protocol<br/>optimized for high-latency or unreliable ne
 
 ^MQTT control packet headers are kept as small as possible.
 
-^Having a small header overhead makes this protocol appropriate for IoT by lowering the amount of data transmitted over constrained networks.
-
 ^Every bit in the packet is carefully crafted to reduce the data transmitted over the network.
 
 ^It means that in comparison with many other protocols (HTTP) it almost does not load the network with the transfer of information, which is necessary only for the functioning of the protocol.
+
+^Having a small header overhead makes this protocol appropriate for IoT by lowering the amount of data transmitted over constrained networks.
 
 ---
 
@@ -496,7 +438,7 @@ A lightweight messaging protocol<br/>optimized for high-latency or unreliable ne
 
 * Data agnostic payload
 
-^Send binary, jpgs, etc
+^Send binary, jpg images, pdfs, etc
 
 ---
 
@@ -516,7 +458,9 @@ A lightweight messaging protocol<br/>optimized for high-latency or unreliable ne
 
 ![inline 102%](qos.png)[^ ]
 
-[^ ]:[http://internetofthingsagenda.techtarget.com/definition/MQTT-MQ-Telemetry-Transport](http://internetofthingsagenda.techtarget.com/definition/MQTT-MQ-Telemetry-Transport)
+[^ ]:
+
+  [http://internetofthingsagenda.techtarget.com/definition/MQTT-MQ-Telemetry-Transport](http://internetofthingsagenda.techtarget.com/definition/MQTT-MQ-Telemetry-Transport)
 
 ^Quality of Service
 
@@ -532,7 +476,7 @@ A lightweight messaging protocol<br/>optimized for high-latency or unreliable ne
 
 ^ Simple verbs used to describe actions:
 
-^eg CONNECT, PUBLISH, SUBSCRIBE, UNSUBSCRIBE and DISCONNECT types that are significant for developers.
+^ Basically 5 verbs in MQTT: CONNECT, DISCONNECT, PUBLISH, SUBSCRIBE, PING
 
 ---
 
@@ -584,11 +528,11 @@ rainbowButton.addEventListener("click", () => sendEvent("rainbow"));
 
 ^Only a couple lines of code to implement.
 
-^Include the library
+^Include the library, Create a client that connects to the url wherever the mqtt broker is located on the web
 
-^Create a client that connects to wherever url the mqtt broker is located
+^Create a function so that whenever the rainbowButton is clicked,
 
-^Whenever the rainbowButton is clicked, sends a message to the broker with topic "lights" with the payload being the string "rainbow"
+^sends a message to the broker with topic "lights" with the payload being the string "rainbow"
 
 ---
 
@@ -612,7 +556,6 @@ void setup() {
   // Called when message received
   MQTTClient.onMessage(messageReceived);
 }
-
 void loop() {
   // Sends/receives messages
   MQTTClient.loop();
@@ -621,9 +564,7 @@ void loop() {
 
 ^Easy to follow even if you aren't familiar with coding for arduino!
 
-^Only a couple lines of code to implement.
-
-^Include the library
+^ Almost identical to web client
 
 ^Connect client to mqtt broker thru the url
 
@@ -656,7 +597,7 @@ void loop() {
 # MQTT Broker
 
 * Couldn't create my own on Heroku (ports not accessible)
-* But... not ready to move services and do devops stuff yet 😮
+* But... also not ready to leave Heroku
 
 ^ Minor hiccup... but looked for a Broker as a service instead
 
@@ -763,7 +704,6 @@ const appPort = 8080;
 
 mqttServer.listen(mqttPort, function() {});
 httpServer.listen(appPort, function() {});
-
 // Augment the HTTP server with MQTT-over-websocket capabilities
 ws.createServer({ server: httpServer }, aedes.handle);
 ```
@@ -774,7 +714,9 @@ ws.createServer({ server: httpServer }, aedes.handle);
 
 ^Create MQTT server & HTTP server
 
-^Listen on the specified port
+^ Specify ports
+
+^Listen on those ports
 
 ^Then addon so the HTTP server has MQTT over websocket capabilities so that it can handle MQTT connections from clients in the browser (our web app)
 
@@ -821,7 +763,7 @@ ws.createServer({ server: httpServer }, aedes.handle);
 
 ^ Separate Wifi module
 
-^ So doesn't have to yield to wifi core, steady wifi throughput
+^ Don't have to yield all the time to the WiFi core, since its a separate chip. You get full reign of the processor and timing
 
 ^ 2X cost of Feather Huzzah
 
@@ -843,7 +785,11 @@ ws.createServer({ server: httpServer }, aedes.handle);
 
 ---
 
-# Final thoughts
+## I messed up a lot.
+
+#<br/>
+
+#### (Flashylights.nl)
 
 ^It can take many iterations to get something right
 
@@ -853,16 +799,46 @@ ws.createServer({ server: httpServer }, aedes.handle);
 
 ^and it was super frustrating,
 
-^but it all helped me learn and improve my skills.
+^but i think in the end i got better? Or at least didn't make the same mistake again and again.
 
-^breaking stereotypes with strangers
+---
+
+## It's a _really_ weird experiment to do as an introvert.
+
+#<br/>
+
+#### (Flashylights.nl)
+
+^ attracting attention and actively seeking out people to interact with me is way outside my comfort zone.
+
+^ but I really wanted to see if i could bring a momentary and joyful to strangers by giving them free reign over my appearance.
+
+^ An application like this is a side of tech a lot of folks haven't experienced.
+
+^ it was also an experiment that pushed me to deal with my own reactions to those interactions.
+
+---
+
+## _Who_ and _what_ belongs in tech?
+
+#<br/>
+
+#### (Flashylights.nl)
+
+^ An application like this is a side of tech a lot of folks haven't experienced.
+
+^ breaking stereotypes with strangers
+
+^ what you can build and who is capable of building those things.
+
+^
 
 ---
 
 # Thank you!
 
-🦄✌☮️️✨
+###🦄✌☮️️✨
 
 [stephanie.lol](https://stephanie.lol)
 
-[@stephanicodes](https://twitter.com/stephaniecodes)
+[@stephaniecodes](https://twitter.com/stephaniecodes)
