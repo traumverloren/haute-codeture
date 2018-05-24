@@ -1,7 +1,7 @@
 theme: Poster Custom
 footer: @stephaniecodes
 
-## Haute Codeture
+# Haute Codeture
 
 ## <br/><br/>
 
@@ -91,25 +91,17 @@ footer: @stephaniecodes
 
 ^ and make my own interactive art experience
 
----
-
-## What if
-
-## I made my clothing
-
-## interactive?
-
 ^ I didn't have a studio space to create an installation like Tinguely.
 
 ^ Apply same idea of interactivity to the most accessible form of expression I could think of - my clothing.
-
-^Really interested in interactions that might occur when people realize it's interactive.
 
 ---
 
 ![loop autoplay](intro-clip.mov)
 
 ^ I wanted to make a complete, cohesive look that was completely interactive via an app.
+
+^Really interested in interactions that might occur when people realize it's interactive.
 
 ---
 
@@ -257,18 +249,6 @@ footer: @stephaniecodes
 
 ---
 
-![100%](wiring-diagrams.png)
-
-^ Since I was building 3 separate pieces,
-
-^ It would be the most wiring and soldering i had ever done before
-
-^ Making wiring diagrams BEFORE i attempted anything with the hardware
-
-^ Saved me so much grief - kept me from getting confused in the middle of the build.
-
----
-
 ![inline fill](leds_strip-wire-solder.gif)![inline fill](IMG_1337.jpg)
 ![inline fill](IMG_1349.jpg)![inline fill](build_process_2.jpg)
 
@@ -334,16 +314,6 @@ footer: @stephaniecodes
 
 ---
 
-## Flaky connection
-
-# <br>
-
-# 🤔
-
-^got me thinking...
-
----
-
 ### Socket.IO is _great_ for the web!
 
 ### but is the _best_ fit for my IoT Project?
@@ -371,17 +341,7 @@ footer: @stephaniecodes
 
 ---
 
-## What else can I use?
-
-# <br><br><br><br><br><br><br><br><br><br><br>
-
----
-
-## What else can I use?
-
-# <br>
-
-## ✨ MQTT ✨
+# ✨ MQTT ✨
 
 ^M2M/IoT connectivity protocol
 
@@ -454,21 +414,18 @@ A lightweight messaging protocol<br/>optimized for high-latency or unreliable ne
 
 ---
 
-# Reliable
-
 ![inline 102%](qos.png)[^ ]
 
 [^ ]:
-
-  [http://internetofthingsagenda.techtarget.com/definition/MQTT-MQ-Telemetry-Transport](http://internetofthingsagenda.techtarget.com/definition/MQTT-MQ-Telemetry-Transport)
+ [http://internetofthingsagenda.techtarget.com/definition/MQTT-MQ-Telemetry-Transport](http://internetofthingsagenda.techtarget.com/definition/MQTT-MQ-Telemetry-Transport)
 
 ^Quality of Service
 
-^QoS: agreement between sender and receiver of a message regarding the guarantees of delivering a message
+^QoS: agreement between sender and receiver of a message regarding the guarantees of delivering a essage
 
-^QoS is a major feature of MQTT, it makes communication in unreliable networks a lot easier because the protocol handles retransmission and guarantees the delivery of the message, regardless how unreliable the underlying transport is
+^QoS is a major feature of MQTT, it makes communication in unreliable networks a lot easier because he protocol handles retransmission and guarantees the delivery of the message, regardless how nreliable the underlying transport is
 
----
+----
 
 ![inline](mqtt-table.jpg)
 
@@ -622,14 +579,6 @@ IoT prototyping platform
 
 ---
 
-![inline](mqtt-shiftr-diagram.png)
-
-^Look it's my setup
-
-^And it worked great!
-
----
-
 ![inline autoplay loop](hoorayquestionmark.mp4)
 
 ^I was happy but I wasn't ecstatic.
@@ -766,16 +715,6 @@ ws.createServer({ server: httpServer }, aedes.handle);
 ^ Don't have to yield all the time to the WiFi core, since its a separate chip. You get full reign of the processor and timing
 
 ^ 2X cost of Feather Huzzah
-
----
-
-[.build-lists: true]
-
-## What next?
-
-* Feather M0 has full python interpreter onboard
-
-* Rewrite Arduino/C++ code in CircuitPython!<br><br>![inline 60%](circuitpython.png)
 
 ---
 
