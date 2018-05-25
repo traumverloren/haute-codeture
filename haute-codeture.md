@@ -17,13 +17,16 @@ footer: @stephaniecodes
 
 ![inline](wilburparty.gif)
 
+^ But i didn't know i liked to build fun things with leds until recently.
+
+^ Been a frontend dev for little over a year.
+
 ---
 
 ## I'm a hardware newbie.
 
-^only been working with hardware for the past year.
+^ only been working with hardware for the past year.
 
-^And I didn't get into hardware cuz I had a project in mind to automate some part of my life.
 
 ---
 
@@ -310,7 +313,9 @@ footer: @stephaniecodes
 
 ![inline](serial-monitor-2.png)
 
-^very clear was crashing cuz the wifi was disconnecting and reconnecting over and over again
+^ It crashing cuz the arduino was having trouble staying connected to the socketio server
+
+^ It was disconnecting/reconnecting over and over again
 
 ---
 
@@ -367,7 +372,7 @@ A lightweight messaging protocol<br/>optimized for high-latency or unreliable ne
 
 ^Clients connect to the broker, which then mediates communication between the devices.
 
-^When a device connect,s it can subscribe to topics.
+^When a device connects it can subscribe to topics.
 
 ^Then, when another client publishes a message on a subscribed topic, the broker forwards the message to any client that has subscribed to it.
 
