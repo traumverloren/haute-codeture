@@ -19,14 +19,11 @@ footer: @stephaniecodes
 
 ^ But i didn't know i liked to build fun things with leds until recently.
 
-^ Been a frontend dev for little over a year.
-
 ---
 
 ## I'm a hardware newbie.
 
 ^ only been working with hardware for the past year.
-
 
 ---
 
@@ -780,6 +777,8 @@ ws.createServer({ server: httpServer }, aedes.handle);
 ---
 
 # Thank you!
+
+![right autoplay](IMG_3976.mov)
 
 ###🦄✌☮️️✨
 
