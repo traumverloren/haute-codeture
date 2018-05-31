@@ -396,39 +396,6 @@ A lightweight messaging protocol<br/>optimized for high-latency or unreliable ne
 
 ---
 
-# Flexible
-
-* Data agnostic payload
-
-^Send binary, jpg images, pdfs, etc
-
----
-
-# Reliable
-
-* Offline Messaging<br/>![inline 90%](dbs.png)
-
-^ Hook up a DB
-
-^ Even if the client is offline
-
-^ Messages stored by the broker and are available right after the client reconnects.
-
----
-
-![inline 102%](qos.png)[^ ]
-
-[^ ]:
- [http://internetofthingsagenda.techtarget.com/definition/MQTT-MQ-Telemetry-Transport](http://internetofthingsagenda.techtarget.com/definition/MQTT-MQ-Telemetry-Transport)
-
-^Quality of Service
-
-^QoS: agreement between sender and receiver of a message regarding the guarantees of delivering a essage
-
-^QoS is a major feature of MQTT, it makes communication in unreliable networks a lot easier because he protocol handles retransmission and guarantees the delivery of the message, regardless how nreliable the underlying transport is
-
-----
-
 ![inline](mqtt-table.jpg)
 
 ^MQTT has short and readable specification.
@@ -436,12 +403,6 @@ A lightweight messaging protocol<br/>optimized for high-latency or unreliable ne
 ^ Simple verbs used to describe actions:
 
 ^ Basically 5 verbs in MQTT: CONNECT, DISCONNECT, PUBLISH, SUBSCRIBE, PING
-
----
-
-![fit](allthethings.jpg)
-
-^So I was sold!
 
 ---
 
@@ -585,15 +546,7 @@ IoT prototyping platform
 
 ^I was happy but I wasn't ecstatic.
 
----
-
-### Relying on a small external broker service...
-
-### **not optimal**
-
-^Too many unknowns: great for prototyping but relying on for my whole project, too risky.
-
-^So you can guess what I probably did next...
+^ Relying on a small external broker service not optimal.
 
 ---
 
@@ -601,28 +554,9 @@ IoT prototyping platform
 
 ### Build my own MQTT broker!
 
-^Built my own mqtt broker
+^ Built my own mqtt broker
 
----
-
-# Build a MQTT Broker
-
-* Need access to port 1883
-* Heroku → Digital Ocean
-
-^Like I mentioned before, I had deployed my app on heroku but unfortunately could access the ports I needed
-
-^Decided to try my luck at configuring/deploying it on digital ocean since i could access ports i need there.
-
----
-
-# Build a MQTT Broker
-
-![inline](mqtt-own-broker-initial.png)
-
-^Embed MQTT Broker in Express server
-
-^Final configuration
+^ Move services from heroku to Digital Ocean
 
 ---
 
@@ -685,12 +619,6 @@ ws.createServer({ server: httpServer }, aedes.handle);
 
 # Iteration #4
 
-# <br><br><br><br><br><br>
-
----
-
-# Iteration #4
-
 #### (aka last thing I changed)
 
 ### Upgrade Microcontroller
@@ -726,24 +654,6 @@ ws.createServer({ server: httpServer }, aedes.handle);
 
 ---
 
-## I messed up a lot.
-
-#<br/>
-
-#### (Flashylights.nl)
-
-^It can take many iterations to get something right
-
-^I messed a bunch during this with trying to figure out devops
-
-^and sloppy soldering,
-
-^and it was super frustrating,
-
-^but i think in the end i got better? Or at least didn't make the same mistake again and again.
-
----
-
 ## It's a _really_ weird experiment to do as an introvert.
 
 #<br/>
@@ -752,27 +662,15 @@ ws.createServer({ server: httpServer }, aedes.handle);
 
 ^ attracting attention and actively seeking out people to interact with me is way outside my comfort zone.
 
-^ but I really wanted to see if i could bring a momentary and joyful to strangers by giving them free reign over my appearance.
-
-^ An application like this is a side of tech a lot of folks haven't experienced.
-
 ^ it was also an experiment that pushed me to deal with my own reactions to those interactions.
 
----
-
-## _Who_ and _what_ belongs in tech?
-
-#<br/>
-
-#### (Flashylights.nl)
+^ but I really wanted to see if i could bring a momentary and joyful to strangers by giving them free reign over my appearance.
 
 ^ An application like this is a side of tech a lot of folks haven't experienced.
 
 ^ breaking stereotypes with strangers
 
 ^ what you can build and who is capable of building those things.
-
-^
 
 ---
 
