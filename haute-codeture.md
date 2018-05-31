@@ -353,9 +353,11 @@ footer: @stephaniecodes
 
 A lightweight messaging protocol<br/>optimized for high-latency or unreliable networks
 
-^Invented in 1999
+^ Invented in 1999
 
-^Need a solution that allowed for minimal battery loss and minimal bandwidth connecting sensors over satellite connection.
+^ Need a solution that allowed for minimal battery loss and minimal bandwidth connecting sensors over satellite connection.
+
+^ I could give a whole talk about MQTT but wanna highlight the things that I thought were the most awesome.
 
 ---
 
@@ -363,21 +365,21 @@ A lightweight messaging protocol<br/>optimized for high-latency or unreliable ne
 
 ![inline](mqtt-pubsub-diagram.png)
 
-^Publish Subscribe Architecture
+^ Publish Subscribe Architecture
 
-^clients and a broker.
+^ clients and a broker.
 
-^Clients connect to the broker, which then mediates communication between the devices.
+^ Clients connect to the broker, which then mediates communication between the devices.
 
-^When a device connects it can subscribe to topics.
+^ When a device connects it can subscribe to topics.
 
-^Then, when another client publishes a message on a subscribed topic, the broker forwards the message to any client that has subscribed to it.
+^ Then, when another client publishes a message on a subscribed topic, the broker forwards the message to any client that has subscribed to it.
 
-^Publisher and subscriber do not need to know each other
+^ Publisher and subscriber do not need to know each other
 
-^Publisher and subscriber do not need to run at the same time.
+^ Publisher and subscriber do not need to run at the same time.
 
-^Operations on both components are not halted during publish or receiving
+^ Operations on both components are not halted during publish or receiving
 
 ---
 
@@ -386,19 +388,19 @@ A lightweight messaging protocol<br/>optimized for high-latency or unreliable ne
 * Transport over TCP/IP
 * 2 byte overhead
 
-^MQTT control packet headers are kept as small as possible.
+^ MQTT control packet headers are kept as small as possible.
 
-^Every bit in the packet is carefully crafted to reduce the data transmitted over the network.
+^ Every bit in the packet is carefully crafted to reduce the data transmitted over the network.
 
-^It means that in comparison with many other protocols (HTTP) it almost does not load the network with the transfer of information, which is necessary only for the functioning of the protocol.
+^ It means that in comparison with many other protocols (HTTP) it almost does not load the network with the transfer of information, which is necessary only for the functioning of the protocol.
 
-^Having a small header overhead makes this protocol appropriate for IoT by lowering the amount of data transmitted over constrained networks.
+^ Having a small header overhead makes this protocol appropriate for IoT by lowering the amount of data transmitted over constrained networks.
 
 ---
 
 ![inline](mqtt-table.jpg)
 
-^MQTT has short and readable specification.
+^ MQTT has short and readable specification.
 
 ^ Simple verbs used to describe actions:
 
@@ -648,7 +650,7 @@ ws.createServer({ server: httpServer }, aedes.handle);
 
 ---
 
-![loop](haute-codeture-end.mov)
+![loop autoplay](haute-codeture-end.mov)
 
 ^Demo time!
 
@@ -676,7 +678,7 @@ ws.createServer({ server: httpServer }, aedes.handle);
 
 # Thank you!
 
-![right autoplay](IMG_3976.mov)
+![right autoplay loop](IMG_3976.mov)
 
 ###🦄✌☮️️✨
 
