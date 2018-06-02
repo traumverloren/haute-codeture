@@ -678,8 +678,6 @@ ws.createServer({ server: httpServer }, aedes.handle);
 
 # Thank you!
 
-![right autoplay loop](IMG_3976.mov)
-
 ###🦄✌☮️️✨
 
 [stephanie.lol](https://stephanie.lol)
