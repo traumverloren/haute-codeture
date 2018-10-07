@@ -13,6 +13,16 @@ footer: @stephaniecodes
 
 ---
 
+# About me.
+
+![left fit](glitched-selfie.jpg)
+
+- Just moved to Berlin! 👋
+
+- Frontend dev, Microsoft Todo
+
+---
+
 ## I like to build fun things with LEDs.
 
 ![inline](wilburparty.gif)
@@ -83,7 +93,7 @@ footer: @stephaniecodes
 
 ---
 
-# ![](blue-hair-emoji.png) + ![](computer.png) = ![](art.png)
+# ![](woman.png) + ![](computer.png) = ![](art.png)
 
 ^ I was excited by all these ideas
 
@@ -255,6 +265,18 @@ footer: @stephaniecodes
 ^So, the build process:
 
 ^Basically me sitting on the floor in my living room of my tiny amsterdam apartment, and constructing each piece, testing, and fixing soldering mistakes lol
+
+---
+
+![100%](wiring-diagrams.png)
+
+^ Since I was building 3 separate pieces,
+
+^ It would be the most wiring and soldering i had ever done before
+
+^ Making wiring diagrams BEFORE i attempted anything with the hardware
+
+^ Saved me so much grief - kept me from getting confused in the middle of the build.
 
 ---
 
