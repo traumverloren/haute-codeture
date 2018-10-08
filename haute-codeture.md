@@ -700,8 +700,17 @@ ws.createServer({ server: httpServer }, aedes.handle);
 
 # Thank you!
 
+![right fit loop autoplay](IMG_6459.mp4)
+
 ###🦄✌☮️️✨
 
 [stephanie.lol](https://stephanie.lol)
 
 [@stephaniecodes](https://twitter.com/stephaniecodes)
+
+<br/>
+
+Bonus!!! :point_down:
+
+I'll be around with another creation: 
+Speech-to-Image Necklace
