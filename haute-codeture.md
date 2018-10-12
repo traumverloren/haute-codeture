@@ -19,7 +19,9 @@ footer: @stephaniecodes
 
 - Just moved to Berlin! 👋
 
-- Frontend dev, Microsoft Todo
+- Software Engineer, [@MicrosoftToDo](https://www.twitter.com/microsofttodo)
+
+- I 💜 frontend, css, react, a11y
 
 ---
 
