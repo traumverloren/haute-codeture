@@ -23,6 +23,12 @@ footer: @stephaniecodes
 
 - I 💜 frontend, css, react, a11y
 
+^ Just moved to Berlin! 👋
+
+^ Software Engineer at Microsoft ToDo
+
+^ I 💜 frontend, css, react, a11y
+
 ---
 
 ## I like to build fun things with LEDs.
@@ -702,8 +708,6 @@ ws.createServer({ server: httpServer }, aedes.handle);
 
 # Thank you!
 
-![right fit loop autoplay](IMG_6459.mp4)
-
 ###🦄✌☮️️✨
 
 [stephanie.lol](https://stephanie.lol)
@@ -711,8 +715,3 @@ ws.createServer({ server: httpServer }, aedes.handle);
 [@stephaniecodes](https://twitter.com/stephaniecodes)
 
 <br/>
-
-Bonus!!! :point_down:
-
-I'll be around with another creation: 
-Speech-to-Image Necklace
